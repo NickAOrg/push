@@ -1,0 +1,283 @@
+{
+  "name": "IAP Artifacts AW Create Array",
+  "tasks": {
+    "9366": {
+      "name": "forEach",
+      "canvasName": "forEach",
+      "summary": "For Each Loop",
+      "description": "Iterate over each item in an array",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "data_array": "$var.job.items"
+        },
+        "outgoing": {
+          "current_item": "$var.job.current_item"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>forEach</span>"
+        }
+      ],
+      "groups": [],
+      "x": 0.22020725388601037,
+      "y": 0.5037147102526003,
+      "scheduled": false
+    },
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "x": 0,
+      "y": 0.5
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "x": 0.3082901554404145,
+      "y": 0.49925705794947994
+    },
+    "a252": {
+      "name": "newVariable",
+      "canvasName": "newVariable",
+      "summary": "Create a Job Variable",
+      "description": "Create a new Job variable by Job ID and assign it a value.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "name": "result",
+          "value": []
+        },
+        "outgoing": {
+          "value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "summary",
+          "highlightString": "Create a <span class='highlight-string'>Job</span> <span class='highlight-string'>Var</span>iable"
+        },
+        {
+          "key": "description",
+          "highlightString": "Create a new <span class='highlight-string'>Job</span> <span class='highlight-string'>var</span>iable by Job ID and assign it a value."
+        },
+        {
+          "key": "canvasName",
+          "highlightString": "new<span class='highlight-string'>Var</span>iable"
+        }
+      ],
+      "groups": [],
+      "x": 0.10621761658031088,
+      "y": 0.5022288261515602
+    },
+    "b637": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query key",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "$var.job.key",
+          "obj": "$var.9366.current_item"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.22107081174438686,
+      "y": 0.6820208023774146,
+      "scheduled": false
+    },
+    "542a": {
+      "name": "push",
+      "canvasName": "push",
+      "summary": "Push Item to Array",
+      "description": "Push item to a job variable array",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "job_variable": "result",
+          "item_to_push": "$var.b637.return_data"
+        },
+        "outgoing": {
+          "job_variable_value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>push</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Push</span> Item to Array"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Push</span> item to a job variable array"
+        }
+      ],
+      "groups": [],
+      "x": 0.2158894645941278,
+      "y": 0.8380386329866271
+    }
+  },
+  "transitions": {
+    "9366": {
+      "b637": {
+        "type": "standard",
+        "state": "loop"
+      },
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_start": {
+      "a252": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "a252": {
+      "9366": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "b637": {
+      "542a": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "542a": {}
+  },
+  "font_size": 12,
+  "created": "2020-02-28T19:34:41.065Z",
+  "created_by": {
+    "provenance": "Local AAA",
+    "username": "Itential Artifacts",
+    "firstname": "admin",
+    "inactive": true,
+    "email": ""
+  },
+  "createdVersion": "5.5.9-2019.3.0.0",
+  "last_updated": "2021-11-09T14:55:00.822Z",
+  "last_updated_by": {
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "lastUpdatedVersion": "5.40.5-2021.1.59.0",
+  "type": "automation",
+  "description": null,
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "type": "array"
+      },
+      "key": {
+        "type": "string",
+        "examples": [
+          "name"
+        ]
+      }
+    },
+    "required": [
+      "items",
+      "key"
+    ]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "type": "array"
+      },
+      "key": {
+        "type": "string",
+        "examples": [
+          "name"
+        ]
+      },
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      },
+      "current_item": {
+        "type": [
+          "string",
+          "number",
+          "object",
+          "boolean",
+          "integer",
+          "array",
+          "null"
+        ],
+        "examples": [
+          "some item from the data_array"
+        ]
+      },
+      "result": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "groups": []
+}
