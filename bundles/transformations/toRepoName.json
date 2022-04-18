@@ -1,0 +1,141 @@
+{
+  "_id": "5f0c9dae10b81c2da7cf6023",
+  "name": "toRepoName",
+  "incoming": [
+    {
+      "$id": "name",
+      "type": "string",
+      "examples": [
+        "Artifact Wizard"
+      ]
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "repoName",
+      "type": "string",
+      "examples": [
+        "artifact-wizard"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": 3,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "name",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 6,
+      "type": "declaration",
+      "library": "RegExp",
+      "method": "new RegExp",
+      "args": [
+        "\\s",
+        "gm"
+      ],
+      "view": {
+        "row": 2,
+        "col": 1
+      }
+    },
+    {
+      "id": 1,
+      "type": "method",
+      "library": "String",
+      "method": "toLowerCase",
+      "args": [
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 1
+      }
+    },
+    {
+      "id": 7,
+      "type": "assign",
+      "from": {
+        "location": "declaration",
+        "name": 6,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 2,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 4,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 2,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 2,
+      "type": "method",
+      "library": "String",
+      "method": "replace",
+      "args": [
+        null,
+        null,
+        "-"
+      ],
+      "view": {
+        "row": 1,
+        "col": 2
+      }
+    },
+    {
+      "id": 5,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 2,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "repoName",
+        "ptr": ""
+      }
+    }
+  ],
+  "functions": [],
+  "view": {
+    "col": 2,
+    "row": 8
+  },
+  "created": "2020-09-21T22:39:50.636Z",
+  "createdBy": {
+    "_id": "618a8bc42ff2ea5323163fef",
+    "provenance": "Itential AAA LDAP",
+    "username": "itential-artifacts"
+  },
+  "lastUpdated": "2021-11-09T14:55:00.923Z",
+  "lastUpdatedBy": {
+    "_id": "6180307394366d356e0a4259",
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn"
+  },
+  "version": "3.13.0-2020.2.6",
+  "tags": []
+}
