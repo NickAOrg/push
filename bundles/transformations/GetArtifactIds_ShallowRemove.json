@@ -1,0 +1,193 @@
+{
+  "_id": "5f7cd8a23847573af4852ec1",
+  "name": "GetArtifactIds_ShallowRemove",
+  "description": "",
+  "incoming": [
+    {
+      "$id": "incomingFormData",
+      "type": "object",
+      "properties": {
+        "selectArtifactsToBeShallowRemoved": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "artifact": {
+                "type": "string",
+                "examples": [
+                  "@itentialopensource/nick-srt"
+                ]
+              }
+            },
+            "required": []
+          }
+        }
+      },
+      "required": []
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "artifactIdArray",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "id1"
+        ]
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": 3,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "incomingFormData",
+        "ptr": "/selectArtifactsToBeShallowRemoved"
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 1,
+      "type": "method",
+      "library": "Array",
+      "method": "map",
+      "args": [
+        null,
+        "ƒ_map_1"
+      ],
+      "view": {
+        "row": 1,
+        "col": 2
+      }
+    },
+    {
+      "id": 2,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "artifactIdArray",
+        "ptr": ""
+      }
+    }
+  ],
+  "functions": [
+    {
+      "incoming": [
+        {
+          "type": "object",
+          "properties": {
+            "artifact": {
+              "type": "string",
+              "examples": [
+                "@itentialopensource/nick-srt"
+              ]
+            }
+          },
+          "required": [],
+          "$id": "currentValue"
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "optional": true,
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "artifact": {
+                "type": "string",
+                "examples": [
+                  "@itentialopensource/nick-srt"
+                ]
+              }
+            },
+            "required": []
+          },
+          "$id": "array",
+          "optional": true
+        },
+        {
+          "$id": "thisArg",
+          "type": "object",
+          "properties": {},
+          "isContext": true,
+          "isThis": true,
+          "isIndexed": true
+        }
+      ],
+      "outgoing": [
+        {
+          "title": "newValue",
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "editable": true,
+          "$id": "newValue"
+        }
+      ],
+      "functions": [],
+      "name": "ƒ_map_1",
+      "steps": [
+        {
+          "id": 1,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": "/artifact"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "newValue",
+            "ptr": ""
+          }
+        }
+      ],
+      "view": {
+        "col": 3,
+        "row": 6
+      },
+      "id": "ƒ_map_1",
+      "comments": []
+    }
+  ],
+  "view": {
+    "col": 3,
+    "row": 6
+  },
+  "created": "2020-10-06T20:50:42.640Z",
+  "createdBy": {
+    "_id": "618a8bc4a22159532f47066b",
+    "provenance": "Itential AAA LDAP",
+    "username": "nick.andreano"
+  },
+  "lastUpdated": "2021-11-09T14:55:00.878Z",
+  "lastUpdatedBy": {
+    "_id": "6180307394366d356e0a4259",
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn"
+  },
+  "version": "3.13.0-2020.2.6",
+  "tags": []
+}
