@@ -1,0 +1,238 @@
+{
+  "name": "IAP Artifacts AW Install AE Artifact",
+  "tasks": {
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "x": 0.3991189427312775,
+      "y": 0.4148264984227129,
+      "summary": "workflow_start",
+      "description": "workflow_start"
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "x": 1.1823788546255507,
+      "y": 0.3911671924290221,
+      "summary": "workflow_end",
+      "description": "workflow_end"
+    },
+    "86d3": {
+      "name": "addArtifactToAdminEssentials",
+      "canvasName": "addArtifactToAdminEssentials",
+      "summary": "Adds an artifact to AE via direct mongo injection",
+      "description": "Adds an artifact created from a published artifact to admin essentials",
+      "location": "Application",
+      "locationType": null,
+      "app": "AppArtifacts",
+      "type": "automatic",
+      "displayName": "AppArtifacts",
+      "variables": {
+        "incoming": {
+          "artifactBundle": "$var.job.artifactBundle"
+        },
+        "outgoing": {
+          "AEArtifactID": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>add</span>ArtifactToAdminEssentials"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Add</span>s an artifact to AE via direct mongo injection"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Add</span>s an artifact created from a published artifact to admin essentials"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.5850220264317181,
+      "y": 0.42113564668769715,
+      "scheduled": false
+    },
+    "df98": {
+      "name": "makeData",
+      "canvasName": "makeData",
+      "summary": "Convert input into a different data type",
+      "description": "This task takes an input and converts it to a different data type. For example, converting a number into a string.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Tools",
+      "variables": {
+        "incoming": {
+          "input": "/admin/artifacts/export/<!id!>",
+          "outputType": "string",
+          "variables": "$var.b538.merged_object"
+        },
+        "outgoing": {
+          "output": "$var.job.artifactLink"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>makeData</span>"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.0189982728842832,
+      "y": 0.3986842105263158,
+      "scheduled": false
+    },
+    "b538": {
+      "name": "merge",
+      "canvasName": "merge",
+      "summary": "Merge Data",
+      "description": "Merge data into a single object",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "data_to_merge": [
+            {
+              "key": "id",
+              "value": {
+                "task": "86d3",
+                "variable": "AEArtifactID"
+              }
+            }
+          ]
+        },
+        "outgoing": {
+          "merged_object": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>merge</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Merge</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Merge</span> data into a single object"
+        }
+      ],
+      "groups": [],
+      "x": 0.8211453744493392,
+      "y": 0.41324921135646686
+    }
+  },
+  "transitions": {
+    "168": {},
+    "4778": {},
+    "6244": {},
+    "workflow_start": {
+      "86d3": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "a671": {},
+    "bd28": {},
+    "f186": {},
+    "4d92": {},
+    "de5e": {},
+    "6cad": {},
+    "b3bd": {},
+    "8eb0": {},
+    "7ccc": {},
+    "86d3": {
+      "b538": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "df98": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "b538": {
+      "df98": {
+        "type": "standard",
+        "state": "success"
+      }
+    }
+  },
+  "font_size": 12,
+  "created": "2020-05-20T20:45:43.214Z",
+  "created_by": {
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "createdVersion": "5.10.4-2020.1.3.0",
+  "last_updated": "2021-11-09T14:55:00.770Z",
+  "last_updated_by": {
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "lastUpdatedVersion": "5.40.5-2021.1.59.0",
+  "type": "automation",
+  "description": null,
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "artifactBundle": {
+        "type": "object"
+      }
+    },
+    "required": [
+      "artifactBundle"
+    ]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "artifactBundle": {
+        "type": "object"
+      },
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      },
+      "artifactLink": {
+        "title": "output",
+        "type": [
+          "array",
+          "string",
+          "boolean",
+          "number",
+          "object"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "groups": []
+}
