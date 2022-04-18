@@ -1,0 +1,2321 @@
+{
+  "name": "IAP Artifacts AW GitLab Create Link",
+  "tasks": {
+    "1483": {
+      "name": "query",
+      "summary": "Query repo ssh url",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "body.ssh_url_to_repo",
+          "obj": "$var.3e4d.response"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.621821164889254,
+      "y": 0.337404580152672,
+      "scheduled": false
+    },
+    "2801": {
+      "name": "ViewData",
+      "canvasName": "ViewData",
+      "summary": "SOC2 Compliance Repository Check",
+      "description": "Displays a message and runtime data to an operator. This can be used to request a decision, or used for acknowledgement only.",
+      "location": "Application",
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "header": "SOC2 Compliance Repository Check",
+          "message": "",
+          "body": "For IAP - Cloud platform we are pursuing SOC2 compliance. For all Git Repositories, SOC2 compliance requires the following compliance on all repositories.\n<p>1 - GitLab repositories must have a <span style=\"color: red;\">description</span> <br />2 - GitLab repositories must have <span style=\"color: red;\">protected branches</span> <br />3 - Every Merge request should require at least 1 merge reviewer. <br /><br /><strong>This repo is not compliant with the SOC2 Compliance, Kindly make sure the above rules are followed, Please contact Gitlab Administrator for assistance setting merge reviewer </strong></p>",
+          "variables": {},
+          "btn_success": "Retry",
+          "btn_failure": "Skip and set Manually"
+        },
+        "outgoing": {},
+        "error": ""
+      },
+      "view": "/workflow_engine/task/ViewData",
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>ViewData</span>"
+        }
+      ],
+      "groups": [],
+      "x": 1.7715686274509803,
+      "y": 1.2415254237288136,
+      "scheduled": false
+    },
+    "3223": {
+      "name": "newVariable",
+      "canvasName": "newVariable",
+      "summary": "Create a Job Variable",
+      "description": "Create a new Job variable by Job ID and assign it a value.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "name": "repoId",
+          "value": []
+        },
+        "outgoing": {
+          "value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>new</span>Variable"
+        },
+        {
+          "key": "description",
+          "highlightString": "Create a <span class='highlight-string'>new</span> Job variable by Job ID and assign it a value."
+        }
+      ],
+      "groups": [],
+      "x": 0.72279792746114,
+      "y": 0.828869047619048
+    },
+    "3556": {
+      "name": "newVariable",
+      "summary": "Create a Job Variable",
+      "description": "Create a new Job variable by Job ID and assign it a value.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "name": "urlEncodedNamespace",
+          "value": [
+            "itentialopensource%2Fpre-built-automations"
+          ]
+        },
+        "outgoing": {
+          "value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "summary",
+          "highlightString": "Create a <span class='highlight-string'>Job</span> Variable"
+        },
+        {
+          "key": "description",
+          "highlightString": "Create a new <span class='highlight-string'>Job</span> variable by Job ID and assign it a value."
+        }
+      ],
+      "groups": [],
+      "x": -0.191709844559585,
+      "y": 0.532738095238095
+    },
+    "5381": {
+      "name": "restCall",
+      "canvasName": "restCall",
+      "summary": "Delete master protected branch",
+      "description": "Execute a REST call",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Tools",
+      "variables": {
+        "incoming": {
+          "uri": "$var.ba3a.combinedStrings",
+          "verb": "DELETE",
+          "user": "",
+          "password": "",
+          "headers": "$var.job.headers",
+          "body": "",
+          "responseHeaders": false
+        },
+        "outgoing": {
+          "response": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>rest</span><span class='highlight-string'>Call</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>REST</span> <span class='highlight-string'>Call</span>"
+        },
+        {
+          "key": "description",
+          "highlightString": "Execute a <span class='highlight-string'>REST</span> <span class='highlight-string'>call</span>"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.866393442622951,
+      "y": 0.7722457627118644,
+      "scheduled": false
+    },
+    "5642": {
+      "name": "merge",
+      "summary": "Create PUT body",
+      "description": "Merge data into a single object",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "data_to_merge": [
+            {
+              "key": "description",
+              "value": {
+                "task": "job",
+                "variable": "description",
+                "editable": true
+              }
+            }
+          ]
+        },
+        "outgoing": {
+          "merged_object": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>merge</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Merge</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Merge</span> data into a single object"
+        }
+      ],
+      "groups": [],
+      "x": 1.21222410865874,
+      "y": 0.642857142857143
+    },
+    "8994": {
+      "name": "stringConcat",
+      "summary": "Concatenate url to GET group",
+      "description": "Concatenates a string with a second string(s). The second parameter can be a string or array.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "https://gitlab.com/api/v4/groups/",
+          "stringN": "$var.job.urlEncodedNamespace"
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates a string with a second string(s). The second parameter can be a string or array."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": -0.191709844559585,
+      "y": 0.71875,
+      "scheduled": false,
+      "canvasName": "concat"
+    },
+    "9052": {
+      "name": "query",
+      "summary": "Query repo id",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "body.id",
+          "obj": "$var.3e4d.response"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.61771944216571,
+      "y": 0.635114503816794,
+      "scheduled": false
+    },
+    "9384": {
+      "name": "stringConcat",
+      "summary": "Concatenate DEL Fork URL",
+      "description": "Concatenates a string with a second string(s). The second parameter can be a string or array.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "$var.80b6.combinedStrings",
+          "stringN": [
+            "/fork"
+          ]
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates a string with a second string(s). The second parameter can be a string or array."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.04668930390492,
+      "y": 0.645833333333333,
+      "scheduled": false,
+      "canvasName": "concat"
+    },
+    "9434": {
+      "name": "query",
+      "summary": "Query artifact update",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "update",
+          "obj": "$var.job.artifact"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 1.03367875647668,
+      "y": 0.395833333333333,
+      "scheduled": false
+    },
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "x": -0.396373056994819,
+      "y": 0.511904761904762,
+      "summary": "workflow_start",
+      "description": "workflow_start"
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "x": 2.1745901639344263,
+      "y": 0.9417372881355932,
+      "summary": "workflow_end",
+      "description": "workflow_end"
+    },
+    "a7e0": {
+      "name": "newVariable",
+      "summary": "Create a Job Variable",
+      "description": "Create a new Job variable by Job ID and assign it a value.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "name": "headers",
+          "value": {
+            "Authorization": "Bearer __ezebRybmJzPgDMv4nC"
+          }
+        },
+        "outgoing": {
+          "value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>new</span>Variable"
+        },
+        {
+          "key": "description",
+          "highlightString": "Create a <span class='highlight-string'>new</span> Job variable by Job ID and assign it a value."
+        }
+      ],
+      "groups": [],
+      "x": -0.312607944732297,
+      "y": 0.53125
+    },
+    "a468": {
+      "name": "restCall",
+      "summary": "GET Get Group",
+      "description": "Execute a REST call",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "uri": "$var.job.groupURL",
+          "verb": "GET",
+          "user": "",
+          "password": "",
+          "headers": "$var.a7e0.value",
+          "body": "",
+          "responseHeaders": true
+        },
+        "outgoing": {
+          "response": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>rest</span>Call"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>REST</span> Call"
+        },
+        {
+          "key": "description",
+          "highlightString": "Execute a <span class='highlight-string'>REST</span> call"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": -0.0172711571675302,
+      "y": 0.973214285714286,
+      "scheduled": false
+    },
+    "3e4d": {
+      "name": "restCall",
+      "summary": "POST Fork Template Project",
+      "description": "Execute a REST call",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "uri": "$var.39b4.combinedStrings",
+          "verb": "POST",
+          "user": "",
+          "password": "",
+          "headers": "$var.job.headers",
+          "body": "$var.49c6.merged_object",
+          "responseHeaders": true
+        },
+        "outgoing": {
+          "response": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>rest</span>Call"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>REST</span> Call"
+        },
+        {
+          "key": "description",
+          "highlightString": "Execute a <span class='highlight-string'>REST</span> call"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.478777589134126,
+      "y": 0.961309523809524,
+      "scheduled": false
+    },
+    "46e2": {
+      "name": "query",
+      "summary": "Query group id",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "body.id",
+          "obj": "$var.a468.response"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.16839378238341968,
+      "y": 0.506578947368421,
+      "scheduled": false
+    },
+    "49c6": {
+      "name": "merge",
+      "summary": "Create POST body",
+      "description": "Merge data into a single object",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "data_to_merge": [
+            {
+              "key": "namespace",
+              "value": {
+                "task": "46e2",
+                "variable": "return_data"
+              }
+            },
+            {
+              "key": "name",
+              "value": {
+                "task": "job",
+                "variable": "repoName",
+                "editable": true
+              }
+            },
+            {
+              "key": "path",
+              "value": {
+                "task": "7d7e",
+                "variable": "repoName",
+                "editable": true
+              }
+            }
+          ]
+        },
+        "outgoing": {
+          "merged_object": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>merge</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Merge</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Merge</span> data into a single object"
+        }
+      ],
+      "groups": [],
+      "x": 0.25302245250431776,
+      "y": 0.506578947368421
+    },
+    "518f": {
+      "name": "query",
+      "summary": "Query homepage",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "body.web_url",
+          "obj": "$var.3e4d.response"
+        },
+        "outgoing": {
+          "return_data": "$var.job.homepage"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.620180475799836,
+      "y": 0.459541984732824,
+      "scheduled": false
+    },
+    "d69d": {
+      "name": "numberToString",
+      "summary": "Convert repo id to string",
+      "description": "Returns a string representing the specified Number object.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "Number",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "num": "$var.9052.return_data",
+          "radix": ""
+        },
+        "outgoing": {
+          "numToString": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "app",
+          "highlightString": "<span class='highlight-string'>Number</span>Methods"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Convert <span class='highlight-string'>number</span> to string."
+        },
+        {
+          "key": "description",
+          "highlightString": "Returns a string representing the specified <span class='highlight-string'>Number</span> object."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.724957555178268,
+      "y": 0.641369047619048,
+      "scheduled": false,
+      "canvasName": "toString"
+    },
+    "80b6": {
+      "name": "stringConcat",
+      "summary": "Concatenate base url + repo id",
+      "description": "Concatenates a string with a second string(s). The second parameter can be a string or array.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "https://gitlab.com/api/v4/projects/",
+          "stringN": "$var.job.repoId"
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.882852292020374,
+      "y": 0.642857142857143,
+      "scheduled": false,
+      "canvasName": "concat"
+    },
+    "b41b": {
+      "name": "stringConcat",
+      "summary": "Concatenate commit url",
+      "description": "Concatenates a string with a second string(s). The second parameter can be a string or array.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "$var.80b6.combinedStrings",
+          "stringN": [
+            "/repository/commits"
+          ]
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.32088285229202,
+      "y": 0.641369047619048,
+      "scheduled": false,
+      "canvasName": "concat"
+    },
+    "b52c": {
+      "name": "restCall",
+      "summary": "POST Create Commit",
+      "description": "Execute a REST call",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "uri": "$var.b41b.combinedStrings",
+          "verb": "POST",
+          "user": "",
+          "password": "",
+          "headers": "$var.a7e0.value",
+          "body": "$var.7f83.merged_object",
+          "responseHeaders": true
+        },
+        "outgoing": {
+          "response": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>rest</span>Call"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>REST</span> Call"
+        },
+        {
+          "key": "description",
+          "highlightString": "Execute a <span class='highlight-string'>REST</span> call"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.59252971137521,
+      "y": 0.955357142857143,
+      "scheduled": false
+    },
+    "7f83": {
+      "name": "merge",
+      "summary": "Merge Data",
+      "description": "Merge data into a single object",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "data_to_merge": [
+            {
+              "key": "branch",
+              "value": {
+                "task": "static",
+                "variable": "master"
+              }
+            },
+            {
+              "key": "commit_message",
+              "value": {
+                "task": "static",
+                "variable": "initial commit"
+              }
+            },
+            {
+              "key": "author_name",
+              "value": {
+                "task": "static",
+                "variable": "Itential Artifacts"
+              }
+            },
+            {
+              "key": "actions",
+              "value": {
+                "task": "54dc",
+                "variable": "combinedArray"
+              }
+            }
+          ]
+        },
+        "outgoing": {
+          "merged_object": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>merge</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Merge</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Merge</span> data into a single object"
+        }
+      ],
+      "groups": [],
+      "x": 1.5848896434635,
+      "y": 0.642857142857143
+    },
+    "5ad7": {
+      "name": "query",
+      "summary": "Query create commit data",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "commitActions",
+          "obj": "$var.9b1e.job_details"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 1.3272884283247,
+      "y": 0.43452380952381,
+      "scheduled": false
+    },
+    "886a": {
+      "name": "merge",
+      "summary": "uri information",
+      "description": "Merge data into a single object",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "data_to_merge": [
+            {
+              "key": "git",
+              "value": {
+                "task": "1483",
+                "variable": "return_data"
+              }
+            },
+            {
+              "key": "homepage",
+              "value": {
+                "task": "518f",
+                "variable": "return_data"
+              }
+            }
+          ]
+        },
+        "outgoing": {
+          "merged_object": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>merge</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Merge</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Merge</span> data into a single object"
+        }
+      ],
+      "groups": [],
+      "x": 0.696891191709845,
+      "y": 0.401785714285714
+    },
+    "e20d": {
+      "name": "query",
+      "summary": "Query artifact create",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "create",
+          "obj": "$var.job.artifact"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.761658031088083,
+      "y": 0.398809523809524,
+      "scheduled": false
+    },
+    "deae": {
+      "name": "stringConcat",
+      "summary": "Concatenate base URL + namespace",
+      "description": "Concatenates a string with a second string(s). The second parameter can be a string or array.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "https://gitlab.com/api/v4/projects/",
+          "stringN": "$var.job.urlEncodedNamespace"
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates a string with a second string(s). The second parameter can be a string or array."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.234295415959253,
+      "y": 0.711309523809524,
+      "scheduled": false,
+      "canvasName": "concat"
+    },
+    "39b4": {
+      "name": "stringConcat",
+      "summary": "Create POST Fork URL",
+      "description": "Concatenates a string with a second string(s). The second parameter can be a string or array.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "$var.deae.combinedStrings",
+          "stringN": [
+            "%2Fartifact-template-2020.1/fork"
+          ]
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates a string with a second string(s). The second parameter can be a string or array."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.398132427843803,
+      "y": 0.712797619047619,
+      "scheduled": false,
+      "canvasName": "concat"
+    },
+    "ef59": {
+      "name": "restCall",
+      "summary": "DELETE Remove Fork Relationship",
+      "description": "Execute a REST call",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "uri": "$var.9384.combinedStrings",
+          "verb": "DELETE",
+          "user": "",
+          "password": "",
+          "headers": "$var.job.headers",
+          "body": "",
+          "responseHeaders": true
+        },
+        "outgoing": {
+          "response": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>restCall</span>"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.0237704918032786,
+      "y": 0.9502118644067796,
+      "scheduled": false
+    },
+    "45b3": {
+      "name": "restCall",
+      "summary": "PUT Update Repository",
+      "description": "Execute a REST call",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "uri": "$var.80b6.combinedStrings",
+          "verb": "PUT",
+          "user": "",
+          "password": "",
+          "headers": "$var.job.headers",
+          "body": "$var.5642.merged_object",
+          "responseHeaders": true
+        },
+        "outgoing": {
+          "response": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>restCall</span>"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.1950819672131148,
+      "y": 0.951271186440678,
+      "scheduled": false
+    },
+    "d987": {
+      "name": "ViewData",
+      "summary": "View Data",
+      "description": "View data in a pretty format",
+      "location": "Application",
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "header": "Error",
+          "message": "",
+          "body": "Error creating project on GitLab. Try again?",
+          "variables": {},
+          "btn_success": "Retry",
+          "btn_failure": ""
+        },
+        "outgoing": {},
+        "error": ""
+      },
+      "view": "/workflow_engine/task/ViewData",
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>ViewData</span>"
+        }
+      ],
+      "groups": [],
+      "x": 0.475382003395586,
+      "y": 1.2485119047619,
+      "scheduled": false
+    },
+    "2cad": {
+      "name": "ViewData",
+      "summary": "View Data",
+      "description": "View data in a pretty format",
+      "location": "Application",
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "header": "Error",
+          "message": "",
+          "body": "Error making commit to repository on GitLab. Try again?",
+          "variables": {},
+          "btn_success": "Retry",
+          "btn_failure": ""
+        },
+        "outgoing": {},
+        "error": ""
+      },
+      "view": "/workflow_engine/task/ViewData",
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>ViewData</span>"
+        }
+      ],
+      "groups": [],
+      "x": 1.59337860780985,
+      "y": 1.23511904761905,
+      "scheduled": false
+    },
+    "cc5f": {
+      "name": "query",
+      "summary": "Query update commit data",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "commitActions",
+          "obj": "$var.fb11.job_details"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 1.3307426597582,
+      "y": 0.34077380952381,
+      "scheduled": false
+    },
+    "54dc": {
+      "name": "arrayConcat",
+      "summary": "Concat commit action arrays",
+      "description": "Used to merge two arrays",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "Array",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "arr": "$var.5ad7.return_data",
+          "arrayN": "$var.cc5f.return_data"
+        },
+        "outgoing": {
+          "combinedArray": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates arrays together."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.584628670120898,
+      "y": 0.38442521631644005,
+      "scheduled": false,
+      "canvasName": "concat"
+    },
+    "e599": {
+      "name": "push",
+      "canvasName": "push",
+      "summary": "Push Item to Array",
+      "description": "Push item to a job variable array",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "job_variable": "repoId",
+          "item_to_push": "$var.d69d.numToString"
+        },
+        "outgoing": {
+          "job_variable_value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>push</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Push</span> Item to Array"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Push</span> item to a job variable array"
+        }
+      ],
+      "groups": [],
+      "x": 0.872193436960276,
+      "y": 0.828869047619048
+    },
+    "9b1e": {
+      "name": "childJob",
+      "canvasName": "childJob",
+      "summary": "Create Commit Data",
+      "description": "Run a child Job inside a Workflow",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "task": "",
+          "workflow": "IAP Artifacts AW GitLab Commit Data",
+          "variables": {
+            "artifact": {
+              "variable": "",
+              "task": "e20d",
+              "value": "return_data"
+            },
+            "action": {
+              "variable": "",
+              "task": "static",
+              "value": "create"
+            }
+          },
+          "data_array": "",
+          "transformation": "",
+          "loopType": ""
+        },
+        "outgoing": {
+          "job_details": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>childJob</span>"
+        }
+      ],
+      "groups": [],
+      "actor": "job",
+      "x": 0.898963730569948,
+      "y": 0.400297619047619
+    },
+    "fb11": {
+      "name": "childJob",
+      "canvasName": "childJob",
+      "summary": "Update Commit Data",
+      "description": "Run a child Job inside a Workflow",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "task": "",
+          "workflow": "IAP Artifacts AW GitLab Commit Data",
+          "variables": {
+            "artifact": {
+              "variable": "",
+              "task": "9434",
+              "value": "return_data"
+            },
+            "action": {
+              "variable": "",
+              "task": "static",
+              "value": "update"
+            }
+          },
+          "data_array": "",
+          "transformation": "",
+          "loopType": ""
+        },
+        "outgoing": {
+          "job_details": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>childJob</span>"
+        }
+      ],
+      "groups": [],
+      "actor": "job",
+      "x": 1.17616580310881,
+      "y": 0.392857142857143
+    },
+    "e61a": {
+      "name": "stringConcat",
+      "canvasName": "concat",
+      "summary": "Concatenates staging folder",
+      "description": "Concatenates a string with an array of strings.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "$var.8994.combinedStrings",
+          "stringN": [
+            "%2Fstaging"
+          ]
+        },
+        "outgoing": {
+          "combinedStrings": "$var.job.groupURL"
+        },
+        "error": ""
+      },
+      "deprecated": true,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates a string with an array of strings."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": -0.0181347150259067,
+      "y": 0.720238095238095,
+      "scheduled": false
+    },
+    "7d7e": {
+      "name": "transformation",
+      "canvasName": "transformation",
+      "summary": "JSON Transformation",
+      "description": "Perform a JSON Transformation using the JST library.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "tr_id": "5f0c9dae10b81c2da7cf6023",
+          "variableMap": {
+            "name": "$var.job.repoName"
+          },
+          "options": {
+            "extractOutput": true
+          }
+        },
+        "outgoing": {
+          "repoName": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "description",
+          "highlightString": "Perform a JSON Transformation using the <span class='highlight-string'>JST</span> library."
+        }
+      ],
+      "groups": [],
+      "x": 0.20984455958549222,
+      "y": 0.3868421052631579
+    },
+    "f9b1": {
+      "name": "stringConcat",
+      "canvasName": "concat",
+      "summary": "Make Approver Url",
+      "description": "Concatenates a string with a second string(s). The second parameter can be a string or array.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "String",
+      "variables": {
+        "incoming": {
+          "str": "$var.80b6.combinedStrings",
+          "stringN": [
+            "/approvals"
+          ]
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>conca</span>t"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Conca</span>tenates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Conca</span>tenates a string with a second string(s). The second parameter can be a string or array."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.061764705882353,
+      "y": 1.1069915254237288,
+      "scheduled": false
+    },
+    "727a": {
+      "name": "makeData",
+      "canvasName": "makeData",
+      "summary": "Get Approval Payload",
+      "description": "This task takes an input and converts it to a different data type. For example, converting a number into a string.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Tools",
+      "variables": {
+        "incoming": {
+          "input": "{\n\"approvals_before_merge\": 1,\n\"reset_approvals_on_push\": false,\n\"disable_overriding_approvers_per_merge_request\": false,\n\"merge_requests_author_approval\": false,\n\"merge_requests_disable_committers_approval\": false,\n  \"require_password_to_approve\": true\n}",
+          "outputType": "json",
+          "variables": ""
+        },
+        "outgoing": {
+          "output": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>makeData</span>"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.2990196078431373,
+      "y": 1.097457627118644,
+      "scheduled": false
+    },
+    "fcbb": {
+      "name": "restCall",
+      "canvasName": "restCall",
+      "summary": "GitlAb Approver Rest Call",
+      "description": "Execute a REST call",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Tools",
+      "variables": {
+        "incoming": {
+          "uri": "$var.f9b1.combinedStrings",
+          "verb": "POST",
+          "user": "",
+          "password": "",
+          "headers": "$var.job.headers",
+          "body": "$var.727a.output",
+          "responseHeaders": false
+        },
+        "outgoing": {
+          "response": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>rest</span>Call"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>REST</span> Call"
+        },
+        {
+          "key": "description",
+          "highlightString": "Execute a <span class='highlight-string'>REST</span> call"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.7754901960784313,
+      "y": 0.9523305084745762,
+      "scheduled": false
+    },
+    "fcc1": {
+      "name": "restCall",
+      "canvasName": "restCall",
+      "summary": "Set Protected branch",
+      "description": "Execute a REST call",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Tools",
+      "variables": {
+        "incoming": {
+          "uri": "$var.7c64.combinedStrings",
+          "verb": "POST",
+          "user": "",
+          "password": "",
+          "headers": "$var.job.headers",
+          "body": {
+            "name": "release/*",
+            "allowed_to_push": [
+              {
+                "access_level": 0,
+                "access_level_description": "No one",
+                "user_id": null,
+                "group_id": null
+              }
+            ],
+            "allowed_to_merge": [
+              {
+                "access_level": 40,
+                "access_level_description": "Maintainers",
+                "user_id": null,
+                "group_id": null
+              }
+            ],
+            "unprotect_access_levels": [],
+            "code_owner_approval_required": true
+          },
+          "responseHeaders": false
+        },
+        "outgoing": {
+          "response": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>rest</span><span class='highlight-string'>Call</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>REST</span> <span class='highlight-string'>Call</span>"
+        },
+        {
+          "key": "description",
+          "highlightString": "Execute a <span class='highlight-string'>REST</span> <span class='highlight-string'>call</span>"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 2.1737704918032787,
+      "y": 0.7669491525423728,
+      "scheduled": false
+    },
+    "ef7b": {
+      "name": "restCall",
+      "canvasName": "restCall",
+      "summary": "Set master protected branch",
+      "description": "Execute a REST call",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Tools",
+      "variables": {
+        "incoming": {
+          "uri": "$var.7c64.combinedStrings",
+          "verb": "POST",
+          "user": "",
+          "password": "",
+          "headers": "$var.job.headers",
+          "body": {
+            "name": "master",
+            "allowed_to_push": [
+              {
+                "access_level": 40,
+                "access_level_description": "Maintainers",
+                "user_id": null,
+                "group_id": null
+              }
+            ],
+            "allowed_to_merge": [
+              {
+                "access_level": 40,
+                "access_level_description": "Maintainers",
+                "user_id": null,
+                "group_id": null
+              }
+            ],
+            "unprotect_access_levels": [],
+            "code_owner_approval_required": true
+          },
+          "responseHeaders": false
+        },
+        "outgoing": {
+          "response": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>rest</span><span class='highlight-string'>Call</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>REST</span> <span class='highlight-string'>Call</span>"
+        },
+        {
+          "key": "description",
+          "highlightString": "Execute a <span class='highlight-string'>REST</span> <span class='highlight-string'>call</span>"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 2.0352459016393443,
+      "y": 0.7722457627118644,
+      "scheduled": false
+    },
+    "7c64": {
+      "name": "stringConcat",
+      "canvasName": "concat",
+      "summary": "Get protected branch url",
+      "description": "Concatenates a string with a second string(s). The second parameter can be a string or array.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "String",
+      "variables": {
+        "incoming": {
+          "str": "$var.80b6.combinedStrings",
+          "stringN": [
+            "/protected_branches"
+          ]
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates a string with a second string(s). The second parameter can be a string or array."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.448360655737705,
+      "y": 0.923728813559322,
+      "scheduled": false
+    },
+    "ba3a": {
+      "name": "stringConcat",
+      "canvasName": "concat",
+      "summary": "get branch protected delete",
+      "description": "Concatenates a string with a second string(s). The second parameter can be a string or array.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "String",
+      "variables": {
+        "incoming": {
+          "str": "$var.7c64.combinedStrings",
+          "stringN": [
+            "/master"
+          ]
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates a string with a second string(s). The second parameter can be a string or array."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.4368852459016392,
+      "y": 0.7733050847457628,
+      "scheduled": false
+    }
+  },
+  "transitions": {
+    "1483": {
+      "886a": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "2801": {
+      "5381": {
+        "type": "standard",
+        "state": "failure"
+      },
+      "fcbb": {
+        "type": "revert",
+        "state": "success"
+      }
+    },
+    "3223": {
+      "e599": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "3556": {
+      "8994": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "5381": {
+      "ef7b": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "5642": {
+      "45b3": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "8994": {
+      "e61a": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "9052": {
+      "d69d": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "9384": {
+      "ef59": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "9434": {
+      "fb11": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_start": {
+      "a7e0": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "a7e0": {
+      "3556": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "a468": {
+      "46e2": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "6d39": {},
+    "3e4d": {
+      "1483": {
+        "type": "standard",
+        "state": "success"
+      },
+      "9052": {
+        "type": "standard",
+        "state": "success"
+      },
+      "518f": {
+        "type": "standard",
+        "state": "success"
+      },
+      "d987": {
+        "type": "standard",
+        "state": "error"
+      }
+    },
+    "75aa": {},
+    "46e2": {
+      "7d7e": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "bff1": {},
+    "49c6": {
+      "deae": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "bf00": {},
+    "518f": {
+      "886a": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "d69d": {
+      "3223": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "89af": {},
+    "80b6": {
+      "9384": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "b41b": {
+      "7f83": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "aade": {},
+    "b52c": {
+      "2cad": {
+        "type": "standard",
+        "state": "error"
+      },
+      "fcbb": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "7f83": {
+      "b52c": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "5ad7": {
+      "54dc": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "886a": {
+      "e20d": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "e20d": {
+      "9b1e": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "deae": {
+      "39b4": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "39b4": {
+      "3e4d": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "ef59": {
+      "5642": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "45b3": {
+      "f9b1": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "d987": {
+      "3e4d": {
+        "type": "revert",
+        "state": "success"
+      }
+    },
+    "2cad": {
+      "b52c": {
+        "type": "revert",
+        "state": "success"
+      }
+    },
+    "cc5f": {
+      "54dc": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "54dc": {
+      "7f83": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "e599": {
+      "80b6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "9b1e": {
+      "9434": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "fb11": {
+      "5ad7": {
+        "type": "standard",
+        "state": "success"
+      },
+      "cc5f": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "e61a": {
+      "a468": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "7d7e": {
+      "49c6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "f9b1": {
+      "727a": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "727a": {
+      "7c64": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "fcbb": {
+      "2801": {
+        "type": "standard",
+        "state": "error"
+      },
+      "5381": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "fcc1": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "ef7b": {
+      "fcc1": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "7c64": {
+      "ba3a": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "ba3a": {
+      "b41b": {
+        "type": "standard",
+        "state": "success"
+      }
+    }
+  },
+  "font_size": 12,
+  "created": "2020-05-21T14:49:23.982Z",
+  "created_by": {
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "createdVersion": "5.10.4-2020.1.3.0",
+  "last_updated": "2021-11-09T14:55:00.842Z",
+  "last_updated_by": {
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "lastUpdatedVersion": "5.40.5-2021.1.59.0",
+  "type": "automation",
+  "description": null,
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "artifact": {
+        "type": "object",
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      },
+      "repoName": {
+        "$id": "name",
+        "type": "string",
+        "examples": [
+          "Artifact Wizard"
+        ]
+      }
+    },
+    "required": [
+      "description",
+      "artifact",
+      "repoName"
+    ]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "artifact": {
+        "type": "object",
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      },
+      "repoName": {
+        "$id": "name",
+        "type": "string",
+        "examples": [
+          "Artifact Wizard"
+        ]
+      },
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      },
+      "repoId": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "urlEncodedNamespace": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "headers": {
+        "type": "object",
+        "properties": {
+          "Authorization": {
+            "type": "string"
+          }
+        }
+      },
+      "groupURL": {
+        "title": "combinedStrings",
+        "type": "string",
+        "examples": [
+          "Hello World"
+        ]
+      },
+      "homepage": {
+        "type": [
+          "string",
+          "number",
+          "object",
+          "integer",
+          "array",
+          "boolean",
+          "null"
+        ],
+        "examples": [
+          "value"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "groups": []
+}
