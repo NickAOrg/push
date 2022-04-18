@@ -1,0 +1,581 @@
+{
+  "_id": "60026031e30efd085ffcfb57",
+  "name": "changeScopePackageJson",
+  "description": "",
+  "incoming": [
+    {
+      "$id": "scope",
+      "type": "string"
+    },
+    {
+      "$id": "packageJson",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "examples": [
+            "@random/artifact-template"
+          ]
+        },
+        "version": {
+          "type": "string",
+          "examples": [
+            "0.0.6"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "examples": [
+            "Template for creating new artifacts"
+          ]
+        },
+        "scripts": {
+          "type": "object",
+          "properties": {
+            "test": {
+              "type": "string",
+              "examples": [
+                "echo \"Error: no test specified\" && exit 1"
+              ]
+            },
+            "deploy": {
+              "type": "string",
+              "examples": [
+                "echo not needed npm publish --access=public --registry=http://registry.npmjs.org"
+              ]
+            },
+            "validateSchema": {
+              "type": "string",
+              "examples": [
+                "node test/manifestTester.js manifest.json manifest-schema.json"
+              ]
+            },
+            "validateSchemaLinks": {
+              "type": "string",
+              "examples": [
+                "node test/manifestLinkTester.js manifest.json"
+              ]
+            },
+            "generateImageLinks": {
+              "type": "string",
+              "examples": [
+                "node utils/generateImageLinks.js"
+              ]
+            }
+          },
+          "required": []
+        },
+        "repository": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "examples": [
+                "git"
+              ]
+            },
+            "url": {
+              "type": "string",
+              "examples": [
+                "https://gitlab.com/itentialopensource/pre-built-automations/artifact-template.git"
+              ]
+            }
+          },
+          "required": []
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": [
+              "Itential"
+            ]
+          }
+        },
+        "contributors": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": [
+              "Itential Artifacts"
+            ]
+          }
+        },
+        "author": {
+          "type": "string",
+          "examples": [
+            "Itential Artifacts"
+          ]
+        },
+        "license": {
+          "type": "string",
+          "examples": [
+            "Apache-2.0"
+          ]
+        },
+        "devDependencies": {
+          "type": "object",
+          "properties": {
+            "r2": {
+              "type": "string",
+              "examples": [
+                "^2.0.1"
+              ]
+            },
+            "ajv": {
+              "type": "string",
+              "examples": [
+                "6.10.0"
+              ]
+            },
+            "better-ajv-errors": {
+              "type": "string",
+              "examples": [
+                "^0.6.1"
+              ]
+            },
+            "fs-extra": {
+              "type": "string",
+              "examples": [
+                "^7.0.1"
+              ]
+            }
+          },
+          "required": []
+        }
+      },
+      "required": []
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "packageJson",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "examples": [
+            "@random/artifact-template"
+          ]
+        },
+        "version": {
+          "type": "string",
+          "examples": [
+            "0.0.6"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "examples": [
+            "Template for creating new artifacts"
+          ]
+        },
+        "scripts": {
+          "type": "object",
+          "properties": {
+            "test": {
+              "type": "string",
+              "examples": [
+                "echo \"Error: no test specified\" && exit 1"
+              ]
+            },
+            "deploy": {
+              "type": "string",
+              "examples": [
+                "echo not needed npm publish --access=public --registry=http://registry.npmjs.org"
+              ]
+            },
+            "validateSchema": {
+              "type": "string",
+              "examples": [
+                "node test/manifestTester.js manifest.json manifest-schema.json"
+              ]
+            },
+            "validateSchemaLinks": {
+              "type": "string",
+              "examples": [
+                "node test/manifestLinkTester.js manifest.json"
+              ]
+            },
+            "generateImageLinks": {
+              "type": "string",
+              "examples": [
+                "node utils/generateImageLinks.js"
+              ]
+            }
+          },
+          "required": []
+        },
+        "repository": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "examples": [
+                "git"
+              ]
+            },
+            "url": {
+              "type": "string",
+              "examples": [
+                "https://gitlab.com/itentialopensource/pre-built-automations/artifact-template.git"
+              ]
+            }
+          },
+          "required": []
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": [
+              "Itential"
+            ]
+          }
+        },
+        "contributors": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": [
+              "Itential Artifacts"
+            ]
+          }
+        },
+        "author": {
+          "type": "string",
+          "examples": [
+            "Itential Artifacts"
+          ]
+        },
+        "license": {
+          "type": "string",
+          "examples": [
+            "Apache-2.0"
+          ]
+        },
+        "devDependencies": {
+          "type": "object",
+          "properties": {
+            "r2": {
+              "type": "string",
+              "examples": [
+                "^2.0.1"
+              ]
+            },
+            "ajv": {
+              "type": "string",
+              "examples": [
+                "6.10.0"
+              ]
+            },
+            "better-ajv-errors": {
+              "type": "string",
+              "examples": [
+                "^0.6.1"
+              ]
+            },
+            "fs-extra": {
+              "type": "string",
+              "examples": [
+                "^7.0.1"
+              ]
+            }
+          },
+          "required": []
+        }
+      },
+      "required": []
+    }
+  ],
+  "steps": [
+    {
+      "id": 2,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "scope",
+        "ptr": ""
+      },
+      "to": {
+        "location": "function",
+        "name": 1,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 3,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "packageJson",
+        "ptr": "/name"
+      },
+      "to": {
+        "location": "function",
+        "name": 1,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 5,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "packageJson",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 4,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 4,
+      "type": "method",
+      "library": "Object",
+      "method": "deleteProperty",
+      "args": [
+        null,
+        "name"
+      ],
+      "view": {
+        "row": 2,
+        "col": 1
+      }
+    },
+    {
+      "id": 1,
+      "type": "function",
+      "function": "getNewScopeURL",
+      "args": [
+        "",
+        ""
+      ],
+      "view": {
+        "row": 1,
+        "col": 1
+      }
+    },
+    {
+      "id": 7,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 4,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 8,
+      "type": "assign",
+      "from": {
+        "location": "function",
+        "name": 1,
+        "ptr": "/return/newScopeUrl"
+      },
+      "to": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/args/2/value"
+      }
+    },
+    {
+      "id": 6,
+      "type": "method",
+      "library": "Object",
+      "method": "setProperty",
+      "args": [
+        null,
+        "name",
+        null
+      ],
+      "view": {
+        "row": 2,
+        "col": 2
+      }
+    },
+    {
+      "id": 9,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "packageJson",
+        "ptr": ""
+      }
+    }
+  ],
+  "functions": [
+    {
+      "incoming": [
+        {
+          "$id": "newScope",
+          "type": "string"
+        },
+        {
+          "$id": "oldScopeUrl",
+          "type": "string"
+        }
+      ],
+      "outgoing": [
+        {
+          "$id": "newScopeUrl",
+          "type": "string"
+        }
+      ],
+      "functions": [],
+      "name": "getNewScopeURL",
+      "steps": [
+        {
+          "id": 4,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "oldScopeUrl",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 11,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "newScope",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 7,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 3,
+          "type": "method",
+          "library": "String",
+          "method": "split",
+          "args": [
+            null,
+            "/",
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 1
+          }
+        },
+        {
+          "id": 6,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 3,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 5,
+          "type": "method",
+          "library": "Array",
+          "method": "getIndex",
+          "args": [
+            null,
+            1
+          ],
+          "view": {
+            "row": 2,
+            "col": 2
+          }
+        },
+        {
+          "id": 9,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 7,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 7,
+          "type": "method",
+          "library": "String",
+          "method": "concat",
+          "args": [
+            null,
+            "/",
+            null
+          ],
+          "view": {
+            "row": 1,
+            "col": 2
+          }
+        },
+        {
+          "id": 10,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 7,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "newScopeUrl",
+            "ptr": ""
+          }
+        }
+      ],
+      "view": {
+        "col": 3,
+        "row": 4
+      },
+      "id": "getNewScopeURL",
+      "comments": []
+    }
+  ],
+  "view": {
+    "col": 3,
+    "row": 4
+  },
+  "created": "2021-01-16T03:40:33.041Z",
+  "createdBy": {
+    "_id": "6180307394366d356e0a4259",
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2021-11-09T14:55:00.934Z",
+  "lastUpdatedBy": {
+    "_id": "6180307394366d356e0a4259",
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn"
+  },
+  "version": "3.13.0-2020.2.6",
+  "tags": []
+}
