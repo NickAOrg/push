@@ -1,0 +1,118 @@
+{
+  "id": "5f7c78a60018ec7488a68c7e",
+  "created": "2020-10-06T13:25:07.206Z",
+  "createdBy": "admin@pronghorn",
+  "lastUpdated": "2021-11-09T14:55:01.021Z",
+  "lastUpdatedBy": "admin@pronghorn",
+  "name": "Shallow Remove Artifact",
+  "description": "",
+  "struct": {
+    "nodeId": "b694282a-3bb5-4dd1-9bc4-3607e90d4904",
+    "type": "array",
+    "items": [
+      {
+        "nodeId": "38111309-f4cd-4845-9436-e831ea4120df",
+        "type": "array",
+        "description": "",
+        "items": [
+          {
+            "nodeId": "fa4094ad-70f4-462c-bcb6-1233e2caeb48",
+            "type": "string",
+            "title": "Artifact",
+            "description": "",
+            "placeholder": "Select an Artifact to shallow remove",
+            "required": true,
+            "enum": [],
+            "binding": true,
+            "rel": "collection",
+            "targetPointer": "/enum",
+            "base": "/",
+            "href": "admin/artifacts?skip=0&limit=500&order=1&sort=name",
+            "sourcePointer": "/packages",
+            "sourceKeyPointer": "/name",
+            "method": "GET"
+          }
+        ],
+        "title": "Select Artifacts to be shallow removed"
+      }
+    ]
+  },
+  "schema": {
+    "title": "Shallow Remove Artifact",
+    "description": "",
+    "type": "object",
+    "required": [],
+    "properties": {
+      "selectArtifactsToBeShallowRemoved": {
+        "type": "array",
+        "title": "Select Artifacts to be shallow removed",
+        "description": "",
+        "items": {
+          "type": "object",
+          "required": [
+            "artifact"
+          ],
+          "properties": {
+            "artifact": {
+              "type": "string",
+              "title": "Artifact",
+              "description": "",
+              "enum": []
+            }
+          }
+        }
+      }
+    }
+  },
+  "uiSchema": {
+    "selectArtifactsToBeShallowRemoved": {
+      "items": {
+        "artifact": {
+          "ui:placeholder": "Select an Artifact to shallow remove"
+        }
+      }
+    }
+  },
+  "bindingSchema": {
+    "properties": {
+      "selectArtifactsToBeShallowRemoved": {
+        "items": {
+          "properties": {
+            "artifact": {
+              "binding:method": "GET",
+              "binding:link": {
+                "$ref": "/links",
+                "rel": "collection"
+              },
+              "binding:source": {
+                "propertyPointer": "/packages",
+                "keyPointer": "/name"
+              },
+              "binding:target": {
+                "propertyPointer": "/enum"
+              },
+              "binding:hyperSchema": {
+                "type": "object",
+                "base": "/",
+                "links": [
+                  {
+                    "rel": "collection",
+                    "href": "admin/artifacts?skip=0&limit=500&order=1&sort=name",
+                    "targetMediaType": "application/json",
+                    "targetSchema": {
+                      "$ref": "#"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "validationSchema": {
+    "selectArtifactsToBeShallowRemoved": {}
+  },
+  "version": "2020.1"
+}
