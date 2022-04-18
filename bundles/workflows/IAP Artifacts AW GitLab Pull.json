@@ -1,0 +1,992 @@
+{
+  "name": "IAP Artifacts AW GitLab Pull",
+  "tasks": {
+    "2148": {
+      "name": "query",
+      "summary": "Query Data Using 'json-query' Format",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "body",
+          "obj": "$var.6e7d.response"
+        },
+        "outgoing": {
+          "return_data": "$var.job.fileContents"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.8929188255613126,
+      "y": 0.5014880952380952,
+      "scheduled": false
+    },
+    "2711": {
+      "name": "newVariable",
+      "canvasName": "newVariable",
+      "summary": "Create a Job Variable",
+      "description": "Create a new Job variable by Job ID and assign it a value.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "name": "fileNameArray",
+          "value": []
+        },
+        "outgoing": {
+          "value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "new<span class='highlight-string'>Var</span>iable"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Create a Job <span class='highlight-string'>Var</span>iable"
+        },
+        {
+          "key": "description",
+          "highlightString": "Create a new Job <span class='highlight-string'>var</span>iable by Job ID and assign it a value."
+        }
+      ],
+      "groups": [],
+      "x": 0.5872193436960277,
+      "y": 0.5223214285714286
+    },
+    "2756": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query Data Using 'json-query' Format",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "",
+          "obj": "$var.job.namespace"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": -0.6623488773747841,
+      "y": 0.5014880952380952,
+      "scheduled": false
+    },
+    "3556": {
+      "name": "newVariable",
+      "summary": "Create a Job Variable",
+      "description": "Create a new Job variable by Job ID and assign it a value.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "name": "urlEncodedNamespace",
+          "value": []
+        },
+        "outgoing": {
+          "value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "summary",
+          "highlightString": "Create a <span class='highlight-string'>Job</span> Variable"
+        },
+        {
+          "key": "description",
+          "highlightString": "Create a new <span class='highlight-string'>Job</span> variable by Job ID and assign it a value."
+        }
+      ],
+      "groups": [],
+      "x": -0.5656303972366149,
+      "y": 0.5119047619047619
+    },
+    "7064": {
+      "name": "stringConcat",
+      "summary": "Create base path",
+      "description": "Concatenates a string with a second string(s). The second parameter can be a string or array.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "https://gitlab.com/api/v4/projects/",
+          "stringN": "$var.job.urlEncodedNamespace"
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates a string with a second string(s). The second parameter can be a string or array."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": -0.2823834196891192,
+      "y": 0.5252976190476191,
+      "scheduled": false,
+      "canvasName": "concat"
+    },
+    "9759": {
+      "name": "push",
+      "canvasName": "push",
+      "summary": "Push Item to Array",
+      "description": "Push item to a job variable array",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "job_variable": "repoNameArray",
+          "item_to_push": "$var.job.repoName"
+        },
+        "outgoing": {
+          "job_variable_value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>push</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Push</span> Item to Array"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Push</span> item to a job variable array"
+        }
+      ],
+      "groups": [],
+      "x": -0.42573402417962003,
+      "y": 0.6904761904761905
+    },
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "x": -0.7253886010362695,
+      "y": 0.5044642857142857,
+      "summary": "workflow_start",
+      "description": "workflow_start"
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "x": 0.9525043177892919,
+      "y": 0.5059523809523809,
+      "summary": "workflow_end",
+      "description": "workflow_end"
+    },
+    "a7e0": {
+      "name": "newVariable",
+      "summary": "Create a Job Variable",
+      "description": "Create a new Job variable by Job ID and assign it a value.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "name": "headers",
+          "value": {
+            "Authorization": "Bearer __ezebRybmJzPgDMv4nC"
+          }
+        },
+        "outgoing": {
+          "value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>new</span>Variable"
+        },
+        {
+          "key": "description",
+          "highlightString": "Create a <span class='highlight-string'>new</span> Job variable by Job ID and assign it a value."
+        }
+      ],
+      "groups": [],
+      "x": -0.5449050086355786,
+      "y": 0.32589285714285715
+    },
+    "6e7d": {
+      "name": "restCall",
+      "summary": "GET file",
+      "description": "Execute a REST call",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "uri": "$var.f4d7.combinedStrings",
+          "verb": "GET",
+          "user": "",
+          "password": "",
+          "headers": "$var.job.headers",
+          "body": "",
+          "responseHeaders": true
+        },
+        "outgoing": {
+          "response": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>rest</span>Call"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>REST</span> Call"
+        },
+        {
+          "key": "description",
+          "highlightString": "Execute a <span class='highlight-string'>REST</span> call"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.7944732297063903,
+      "y": 0.8050595238095238,
+      "scheduled": false
+    },
+    "4ec0": {
+      "name": "newVariable",
+      "summary": "Create a Job Variable",
+      "description": "Create a new Job variable by Job ID and assign it a value.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "name": "repoNameArray",
+          "value": []
+        },
+        "outgoing": {
+          "value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "summary",
+          "highlightString": "Create a <span class='highlight-string'>Job</span> Variable"
+        },
+        {
+          "key": "description",
+          "highlightString": "Create a new <span class='highlight-string'>Job</span> variable by Job ID and assign it a value."
+        }
+      ],
+      "groups": [],
+      "x": -0.5466321243523317,
+      "y": 0.6889880952380952
+    },
+    "934a": {
+      "name": "replace",
+      "canvasName": "replace",
+      "summary": "URL encode filename",
+      "description": "Returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match (function type not supported in workflow engine).",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "$var.job.fileName",
+          "substr": ".",
+          "newSubstr": "%2E"
+        },
+        "outgoing": {
+          "replacedString": null
+        },
+        "error": ""
+      },
+      "deprecated": true,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>replace</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Replace</span>s a string with another string."
+        },
+        {
+          "key": "description",
+          "highlightString": "Returns a new string with some or all matches of a pattern <span class='highlight-string'>replace</span>d by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match (function type not supported in workflow engine)."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.3005181347150259,
+      "y": 0.5252976190476191,
+      "scheduled": false
+    },
+    "c232": {
+      "name": "push",
+      "canvasName": "push",
+      "summary": "Push Item to Array",
+      "description": "Push item to a job variable array",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "job_variable": "fileNameArray",
+          "item_to_push": "$var.job.URLencodedFilename"
+        },
+        "outgoing": {
+          "job_variable_value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>push</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Push</span> Item to Array"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Push</span> item to a job variable array"
+        }
+      ],
+      "groups": [],
+      "x": 0.6951640759930915,
+      "y": 0.5252976190476191
+    },
+    "f4d7": {
+      "name": "stringConcat",
+      "canvasName": "concat",
+      "summary": "Create full path",
+      "description": "Concatenates a string with an array of strings.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "$var.job.basePath",
+          "stringN": "$var.job.fileNameArray"
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": ""
+      },
+      "deprecated": true,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates a string with an array of strings."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.7970639032815199,
+      "y": 0.5282738095238095,
+      "scheduled": false
+    },
+    "32c6": {
+      "name": "push",
+      "canvasName": "push",
+      "summary": "Push Item to Array",
+      "description": "Push item to a job variable array",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "job_variable": "urlEncodedNamespace",
+          "item_to_push": "$var.2756.return_data"
+        },
+        "outgoing": {
+          "job_variable_value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>push</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Push</span> Item to Array"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Push</span> item to a job variable array"
+        }
+      ],
+      "groups": [],
+      "x": -0.42573402417962003,
+      "y": 0.5104166666666666
+    },
+    "ede2": {
+      "name": "stringConcat",
+      "canvasName": "concat",
+      "summary": "Concatenates url encoding",
+      "description": "Concatenates a string with an array of strings.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "$var.7064.combinedStrings",
+          "stringN": [
+            "%2F"
+          ]
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": ""
+      },
+      "deprecated": true,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates a string with an array of strings."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": -0.14766839378238342,
+      "y": 0.5267857142857143,
+      "scheduled": false
+    },
+    "5bf9": {
+      "name": "stringConcat",
+      "canvasName": "concat",
+      "summary": "Concatenates repo name",
+      "description": "Concatenates a string with an array of strings.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "$var.ede2.combinedStrings",
+          "stringN": "$var.job.repoNameArray"
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": ""
+      },
+      "deprecated": true,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates a string with an array of strings."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": -0.0008635578583765112,
+      "y": 0.5267857142857143,
+      "scheduled": false
+    },
+    "bea0": {
+      "name": "stringConcat",
+      "canvasName": "concat",
+      "summary": "Concatenates files endpoint",
+      "description": "Concatenates a string with an array of strings.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "$var.5bf9.combinedStrings",
+          "stringN": [
+            "/repository/files/"
+          ]
+        },
+        "outgoing": {
+          "combinedStrings": "$var.job.basePath"
+        },
+        "error": ""
+      },
+      "deprecated": true,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates a string with an array of strings."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.15112262521588946,
+      "y": 0.5267857142857143,
+      "scheduled": false
+    },
+    "b9e0": {
+      "name": "stringConcat",
+      "canvasName": "concat",
+      "summary": "Concatenates raw endpoint",
+      "description": "Concatenates a string with an array of strings.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "String",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "str": "$var.934a.replacedString",
+          "stringN": [
+            "/raw?ref=master"
+          ]
+        },
+        "outgoing": {
+          "combinedStrings": "$var.job.URLencodedFilename"
+        },
+        "error": ""
+      },
+      "deprecated": true,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>concat</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates strings together."
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Concat</span>enates a string with an array of strings."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.44905008635578586,
+      "y": 0.5238095238095238,
+      "scheduled": false
+    }
+  },
+  "transitions": {
+    "1483": {},
+    "2148": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "2711": {
+      "c232": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "2756": {
+      "3556": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "3556": {
+      "32c6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "7064": {
+      "ede2": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "7197": {},
+    "9133": {},
+    "9759": {
+      "7064": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_start": {
+      "2756": {
+        "type": "standard",
+        "state": "success"
+      },
+      "a7e0": {
+        "type": "standard",
+        "state": "success"
+      },
+      "4ec0": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "a7e0": {
+      "7064": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "6d39": {},
+    "75aa": {},
+    "bff1": {},
+    "bf00": {},
+    "518f": {},
+    "89af": {},
+    "aade": {},
+    "b52c": {},
+    "a04c": {},
+    "6e7d": {
+      "2148": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "c708": {},
+    "c618": {},
+    "9c5d": {},
+    "b739": {},
+    "b6d1": {},
+    "4ec0": {
+      "9759": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "934a": {
+      "b9e0": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "c232": {
+      "f4d7": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "f4d7": {
+      "6e7d": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "7d41": {},
+    "32c6": {
+      "7064": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "ede2": {
+      "5bf9": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "5bf9": {
+      "bea0": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "bea0": {
+      "934a": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "b9e0": {
+      "2711": {
+        "type": "standard",
+        "state": "success"
+      }
+    }
+  },
+  "font_size": 12,
+  "created": "2019-12-03T18:31:09.972Z",
+  "created_by": {
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "createdVersion": "4.5.3-2019.2.7.0",
+  "last_updated": "2021-11-09T14:55:00.628Z",
+  "last_updated_by": {
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "lastUpdatedVersion": "5.40.5-2021.1.59.0",
+  "type": "automation",
+  "description": null,
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "namespace": {
+        "type": "object",
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      },
+      "repoName": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "fileName": {
+        "title": "str",
+        "type": "string",
+        "examples": [
+          "Hello World"
+        ]
+      }
+    },
+    "required": [
+      "namespace",
+      "repoName",
+      "fileName"
+    ]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "namespace": {
+        "type": "object",
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      },
+      "repoName": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "fileName": {
+        "title": "str",
+        "type": "string",
+        "examples": [
+          "Hello World"
+        ]
+      },
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      },
+      "fileContents": {
+        "type": [
+          "string",
+          "number",
+          "object",
+          "integer",
+          "array",
+          "boolean",
+          "null"
+        ],
+        "examples": [
+          "value"
+        ]
+      },
+      "fileNameArray": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "urlEncodedNamespace": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "repoNameArray": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "headers": {
+        "type": "object",
+        "properties": {
+          "Authorization": {
+            "type": "string"
+          }
+        }
+      },
+      "URLencodedFilename": {
+        "title": "combinedStrings",
+        "type": "string",
+        "examples": [
+          "Hello World"
+        ]
+      },
+      "basePath": {
+        "title": "combinedStrings",
+        "type": "string",
+        "examples": [
+          "Hello World"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "groups": []
+}
