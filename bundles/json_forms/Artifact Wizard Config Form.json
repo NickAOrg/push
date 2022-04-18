@@ -1,0 +1,359 @@
+{
+  "id": "6005fff0a6e5629f52c84c15",
+  "created": "2021-01-25T20:35:24.391Z",
+  "createdBy": "admin@pronghorn",
+  "lastUpdated": "2022-03-28T13:15:25.580Z",
+  "lastUpdatedBy": "admin@pronghorn",
+  "name": "Artifact Wizard Config Form",
+  "description": null,
+  "struct": {
+    "nodeId": "8eb9dd59-91c3-419f-b1be-d30a199d9cbc",
+    "type": "array",
+    "items": [
+      {
+        "nodeId": "1f0839ed-2a4c-4db6-bcdc-78f6e6e702be",
+        "type": "object",
+        "description": "",
+        "items": [
+          {
+            "nodeId": "c9f30b40-cf2b-458f-aa9e-573784c989fd",
+            "type": "string",
+            "title": "Scope",
+            "description": "Add the scope of your pre-built",
+            "placeholder": "Enter text",
+            "required": true,
+            "pattern": "@[a-z0-9-~][a-z0-9-._~]*$"
+          },
+          {
+            "nodeId": "64312da1-52db-4c34-91c8-c41541371c75",
+            "type": "string",
+            "title": "Name",
+            "description": "Name consist of one or more words, each must start with capital letter",
+            "placeholder": "",
+            "required": true,
+            "pattern": ""
+          },
+          {
+            "nodeId": "4d5ad663-3b0a-4715-a602-8cdefa2fdcab",
+            "type": "boolean",
+            "title": "Zero Touch",
+            "description": "",
+            "default": false,
+            "enum": [
+              {
+                "id": "64ab894e-079b-4a84-b405-6243ce3a7243",
+                "value": true
+              },
+              {
+                "id": "5baabc90-c42b-400b-a2ef-7f757f890589",
+                "value": false
+              }
+            ]
+          },
+          {
+            "nodeId": "ed55142b-ba9e-4600-badc-bd229bffe13a",
+            "type": "boolean",
+            "title": "Install into Admin Essentials and Download",
+            "description": "",
+            "default": true,
+            "enum": [
+              {
+                "id": "780a2dcd-4dc1-46fe-9432-b81306aa144e",
+                "value": true
+              },
+              {
+                "id": "33dae9c2-79b4-42e7-84a9-6c895712ce65",
+                "value": false
+              }
+            ]
+          },
+          {
+            "nodeId": "4dd36a84-31b9-49c6-8365-377dbb9126f4",
+            "type": "boolean",
+            "title": "Create Gitlab Repository",
+            "description": "",
+            "default": false,
+            "enum": [
+              {
+                "id": "d6be586a-4501-45d1-b491-9bd0cbbef5d5",
+                "value": true
+              },
+              {
+                "id": "d819360b-2899-40b7-a4e1-273c48a5bcb5",
+                "value": false
+              }
+            ]
+          },
+          {
+            "nodeId": "0a094bae-5c17-446c-8a79-9d9fa5072763",
+            "type": "array",
+            "description": "",
+            "items": [
+              {
+                "nodeId": "99478fac-d0c6-4208-a4db-0a6e7bff0433",
+                "type": "string",
+                "title": "Name",
+                "description": "Automation Catalog Name",
+                "placeholder": "Select an Automation Catalog item",
+                "required": true,
+                "enum": [],
+                "binding": true,
+                "rel": "collection",
+                "targetPointer": "/enum",
+                "method": "GET",
+                "base": "/",
+                "href": "automation_catalog/automations?limit=0",
+                "sourcePointer": "/list",
+                "sourceKeyPointer": "/name"
+              }
+            ],
+            "title": "Automation Catalogs"
+          },
+          {
+            "nodeId": "127d8ef1-03bc-4b1c-888d-dd3408bcbec4",
+            "type": "array",
+            "description": "",
+            "items": [
+              {
+                "nodeId": "4647181e-a8c5-4a6e-af7d-3277b21b7476",
+                "type": "string",
+                "title": "Name",
+                "description": "Workflow Automation Name",
+                "placeholder": "Select a Workflow",
+                "required": true,
+                "enum": [],
+                "binding": true,
+                "rel": "collection",
+                "targetPointer": "/enum",
+                "method": "POST",
+                "base": "/",
+                "body": {
+                  "options": {
+                    "skip": 0,
+                    "limit": 0
+                  }
+                },
+                "href": "workflow_engine/workflows/search",
+                "sourcePointer": "/results",
+                "sourceKeyPointer": "/name"
+              }
+            ],
+            "title": "Automation Workflows"
+          }
+        ],
+        "title": "New Artifact"
+      }
+    ]
+  },
+  "schema": {
+    "title": "Artifact Wizard Config Form",
+    "description": "",
+    "type": "object",
+    "required": [],
+    "properties": {
+      "newArtifact": {
+        "type": "object",
+        "title": "New Artifact",
+        "description": "",
+        "required": [
+          "scope",
+          "name"
+        ],
+        "properties": {
+          "scope": {
+            "type": "string",
+            "title": "Scope",
+            "description": "Add the scope of your pre-built",
+            "pattern": "@[a-z0-9-~][a-z0-9-._~]*$"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "Name consist of one or more words, each must start with capital letter"
+          },
+          "zeroTouch": {
+            "type": "boolean",
+            "title": "Zero Touch",
+            "description": "",
+            "default": false,
+            "enum": [
+              true,
+              false
+            ]
+          },
+          "installIntoAdminEssentialsAndDownload": {
+            "type": "boolean",
+            "title": "Install into Admin Essentials and Download",
+            "description": "",
+            "default": true,
+            "enum": [
+              true,
+              false
+            ]
+          },
+          "createGitlabRepository": {
+            "type": "boolean",
+            "title": "Create Gitlab Repository",
+            "description": "",
+            "default": false,
+            "enum": [
+              true,
+              false
+            ]
+          },
+          "automationCatalogs": {
+            "type": "array",
+            "title": "Automation Catalogs",
+            "description": "",
+            "items": {
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "Name",
+                  "description": "Automation Catalog Name",
+                  "enum": []
+                }
+              }
+            }
+          },
+          "automationWorkflows": {
+            "type": "array",
+            "title": "Automation Workflows",
+            "description": "",
+            "items": {
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "Name",
+                  "description": "Workflow Automation Name",
+                  "enum": []
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "uiSchema": {
+    "newArtifact": {
+      "ui:collapseByDefault": false,
+      "items": {
+        "scope": {
+          "ui:placeholder": "Enter text"
+        },
+        "automationCatalogs": {
+          "items": {
+            "name": {
+              "ui:placeholder": "Select an Automation Catalog item"
+            }
+          }
+        },
+        "automationWorkflows": {
+          "items": {
+            "name": {
+              "ui:placeholder": "Select a Workflow"
+            }
+          }
+        }
+      }
+    }
+  },
+  "bindingSchema": {
+    "properties": {
+      "newArtifact": {
+        "properties": {
+          "automationCatalogs": {
+            "items": {
+              "properties": {
+                "name": {
+                  "binding:method": "GET",
+                  "binding:link": {
+                    "$ref": "/links",
+                    "rel": "collection"
+                  },
+                  "binding:target": {
+                    "propertyPointer": "/enum"
+                  },
+                  "binding:hyperSchema": {
+                    "type": "object",
+                    "base": "/",
+                    "links": [
+                      {
+                        "rel": "collection",
+                        "href": "automation_catalog/automations?limit=0",
+                        "targetMediaType": "application/json",
+                        "targetSchema": {
+                          "$ref": "#"
+                        }
+                      }
+                    ]
+                  },
+                  "binding:source": {
+                    "propertyPointer": "/list",
+                    "keyPointer": "/name"
+                  }
+                }
+              }
+            }
+          },
+          "automationWorkflows": {
+            "items": {
+              "properties": {
+                "name": {
+                  "binding:method": "POST",
+                  "binding:link": {
+                    "$ref": "/links",
+                    "rel": "collection"
+                  },
+                  "binding:body": {
+                    "options": {
+                      "skip": 0,
+                      "limit": 0
+                    }
+                  },
+                  "binding:target": {
+                    "propertyPointer": "/enum"
+                  },
+                  "binding:hyperSchema": {
+                    "type": "object",
+                    "base": "/",
+                    "links": [
+                      {
+                        "rel": "collection",
+                        "href": "workflow_engine/workflows/search",
+                        "targetMediaType": "application/json",
+                        "targetSchema": {
+                          "$ref": "#"
+                        }
+                      }
+                    ]
+                  },
+                  "binding:source": {
+                    "propertyPointer": "/results",
+                    "keyPointer": "/name"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "validationSchema": {
+    "newArtifact": {
+      "automationCatalogs": {},
+      "automationWorkflows": {}
+    }
+  },
+  "version": "2020.1"
+}
