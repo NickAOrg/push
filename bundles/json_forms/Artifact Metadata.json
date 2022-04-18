@@ -1,0 +1,275 @@
+{
+  "id": "5ea19814664de56165625665",
+  "created": "2020-04-23T13:28:52.725Z",
+  "createdBy": "admin@pronghorn",
+  "lastUpdated": "2021-11-09T14:55:01.090Z",
+  "lastUpdatedBy": "admin@pronghorn",
+  "name": "Artifact Metadata",
+  "description": "",
+  "struct": {
+    "nodeId": "7222132a-23f4-441d-8b0d-19715a724070",
+    "type": "array",
+    "items": [
+      {
+        "nodeId": "7078ec45-c9e4-4e51-a6b7-32175b7dec26",
+        "type": "string",
+        "title": "Name",
+        "description": "Name consist of one or more words, each must start with capital letter",
+        "placeholder": "",
+        "required": true,
+        "pattern": "^(([A-Z]([a-zA-Z0-9]*)))([\\s][A-Z]([a-zA-Z0-9]*))*$"
+      },
+      {
+        "nodeId": "4811c9ae-2488-4831-8dfc-76af66b311a6",
+        "type": "string",
+        "title": "Description",
+        "description": "Provide a short description of the artifact:",
+        "placeholder": "",
+        "required": true
+      },
+      {
+        "nodeId": "b0c6767f-2125-49f5-96c5-6441a9754a8b",
+        "type": "string",
+        "widget": "textarea",
+        "title": "Readme",
+        "description": "Provide a README in Markdown format:",
+        "placeholder": "",
+        "required": true
+      },
+      {
+        "nodeId": "324e6b2b-7dd2-4db3-9791-aaf6ee3a7995",
+        "type": "string",
+        "widget": "textarea",
+        "title": "License",
+        "description": "(OPTIONAL) Provide a license:",
+        "placeholder": "*By default Apache License 2.0 will be supplied",
+        "required": false
+      },
+      {
+        "nodeId": "52aad9b0-37a2-4294-a80f-1e3351c02195",
+        "type": "string",
+        "widget": "textarea",
+        "title": "Contributor",
+        "description": "* [FOR INTERNAL USE ONLY] Please provide your name:",
+        "placeholder": "",
+        "required": true
+      },
+      {
+        "nodeId": "61ea44b2-4f72-4472-ab93-5e550e65538b",
+        "type": "array",
+        "description": "",
+        "items": [
+          {
+            "nodeId": "2ceea385-5cfc-4ec6-9c38-fc882bbe56ef",
+            "type": "string",
+            "title": "Category",
+            "description": "",
+            "placeholder": "",
+            "required": true,
+            "enum": [
+              {
+                "id": "f9325af2-2a4b-424c-8e38-0bda58e7a161",
+                "value": "Authentication"
+              },
+              {
+                "id": "0b0ea9aa-cb16-4431-9967-69d805f26eaa",
+                "value": "Cloud"
+              },
+              {
+                "id": "fe743287-70df-4f32-9084-0ec49399a78a",
+                "value": "Controller / Orchestration"
+              },
+              {
+                "id": "48dc19ad-8102-45d7-a7e8-3dafc37f568e",
+                "value": "DevOps"
+              },
+              {
+                "id": "d0783b3b-dbcd-42f0-9468-518aba5b533e",
+                "value": "NetOps"
+              },
+              {
+                "id": "5efd1dbe-afef-4299-90b9-801e95884a4d",
+                "value": "Inventory"
+              },
+              {
+                "id": "ee0f0b15-611e-4f99-bc19-cd2b4cf18edb",
+                "value": "ITSM / Testing"
+              },
+              {
+                "id": "d8126c63-cbc4-47d1-87ef-3e0676baabb0",
+                "value": "Notification / Messaging"
+              },
+              {
+                "id": "d80d8443-dabe-459c-8dd2-0549b355533c",
+                "value": "Persistence"
+              },
+              {
+                "id": "a2ae77a7-636e-4bb4-aa5b-2426ad32ea6b",
+                "value": "SD-WAN"
+              },
+              {
+                "id": "a64c83b2-59f1-4642-bda2-16cd3a8f1cae",
+                "value": "Security"
+              },
+              {
+                "id": "d01d20c3-7c09-4e8b-9113-0b277b78191d",
+                "value": "Telemetry / Analytics"
+              },
+              {
+                "id": "bf9740a9-8d30-467f-9288-8afe3a43bab1",
+                "value": "Utilities"
+              }
+            ],
+            "binding": false,
+            "rel": "collection",
+            "targetPointer": "/enum"
+          }
+        ],
+        "title": "Categories"
+      },
+      {
+        "nodeId": "0e33104c-3969-420c-bebc-9b56be616171",
+        "type": "array",
+        "description": "",
+        "items": [
+          {
+            "nodeId": "97ebcf00-b6fb-4c74-8f23-6c83eb4ffa68",
+            "type": "string",
+            "title": "Keyword",
+            "description": "",
+            "placeholder": "",
+            "required": true
+          }
+        ],
+        "title": "Keywords"
+      }
+    ]
+  },
+  "schema": {
+    "title": "Artifact Metadata",
+    "description": "",
+    "type": "object",
+    "required": [
+      "name",
+      "description",
+      "readme",
+      "contributor"
+    ],
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "description": "Name consist of one or more words, each must start with capital letter",
+        "pattern": "^(([A-Z]([a-zA-Z0-9]*)))([\\s][A-Z]([a-zA-Z0-9]*))*$"
+      },
+      "description": {
+        "type": "string",
+        "title": "Description",
+        "description": "Provide a short description of the artifact:"
+      },
+      "readme": {
+        "type": "string",
+        "title": "Readme",
+        "description": "Provide a README in Markdown format:"
+      },
+      "license": {
+        "type": "string",
+        "title": "License",
+        "description": "(OPTIONAL) Provide a license:"
+      },
+      "contributor": {
+        "type": "string",
+        "title": "Contributor",
+        "description": "* [FOR INTERNAL USE ONLY] Please provide your name:"
+      },
+      "categories": {
+        "type": "array",
+        "title": "Categories",
+        "description": "",
+        "items": {
+          "type": "object",
+          "required": [
+            "category"
+          ],
+          "properties": {
+            "category": {
+              "type": "string",
+              "title": "Category",
+              "description": "",
+              "enum": [
+                "Authentication",
+                "Cloud",
+                "Controller / Orchestration",
+                "DevOps",
+                "NetOps",
+                "Inventory",
+                "ITSM / Testing",
+                "Notification / Messaging",
+                "Persistence",
+                "SD-WAN",
+                "Security",
+                "Telemetry / Analytics",
+                "Utilities"
+              ]
+            }
+          }
+        }
+      },
+      "keywords": {
+        "type": "array",
+        "title": "Keywords",
+        "description": "",
+        "items": {
+          "type": "object",
+          "required": [
+            "keyword"
+          ],
+          "properties": {
+            "keyword": {
+              "type": "string",
+              "title": "Keyword",
+              "description": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "uiSchema": {
+    "readme": {
+      "ui:widget": "textarea"
+    },
+    "license": {
+      "ui:placeholder": "*By default Apache License 2.0 will be supplied",
+      "ui:widget": "textarea"
+    },
+    "contributor": {
+      "ui:widget": "textarea"
+    },
+    "categories": {
+      "items": {}
+    },
+    "keywords": {
+      "items": {}
+    }
+  },
+  "bindingSchema": {
+    "properties": {
+      "categories": {
+        "items": {
+          "properties": {}
+        }
+      },
+      "keywords": {
+        "items": {
+          "properties": {}
+        }
+      }
+    }
+  },
+  "validationSchema": {
+    "categories": {},
+    "keywords": {}
+  },
+  "version": "2020.1"
+}
