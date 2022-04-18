@@ -1,0 +1,524 @@
+{
+  "name": "Shallow Remove Artifact",
+  "tasks": {
+    "8596": {
+      "name": "evaluation",
+      "canvasName": "evaluation",
+      "summary": "Are there any artifacts that didn't get removed?",
+      "description": "Are there any artifacts that didn't get removed?",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "all_true_flag": false,
+          "evaluation_groups": [
+            {
+              "all_true_flag": false,
+              "evaluations": [
+                {
+                  "query": "",
+                  "operand_1": {
+                    "variable": "length",
+                    "task": "3b19"
+                  },
+                  "operator": "<=",
+                  "operand_2": {
+                    "variable": 0,
+                    "task": "static"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "outgoing": {
+          "return_value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>eval</span>uation"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Run <span class='highlight-string'>Eval</span>uation Task"
+        },
+        {
+          "key": "description",
+          "highlightString": "Run an <span class='highlight-string'>eval</span>uation"
+        }
+      ],
+      "groups": [],
+      "x": 0.7078464106844741,
+      "y": 0.48687552921253174
+    },
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "x": 0.0651085141903172,
+      "y": 0.48010160880609654
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "x": 0.9874791318864775,
+      "y": 0.4877222692633362
+    },
+    "e3b6": {
+      "name": "forEach",
+      "canvasName": "forEach",
+      "summary": "For Each Loop",
+      "description": "Iterate over each item in an array",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "data_array": "$var.b19e.artifactIdArray"
+        },
+        "outgoing": {
+          "current_item": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>forEa</span>ch"
+        }
+      ],
+      "groups": [],
+      "x": 0.42237061769616024,
+      "y": 0.489415749364945,
+      "scheduled": false
+    },
+    "c00c": {
+      "name": "newVariable",
+      "canvasName": "newVariable",
+      "summary": "Create a Job Variable",
+      "description": "Create a new Job variable by Job ID and assign it a value.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "name": "didNotDelete",
+          "value": []
+        },
+        "outgoing": {
+          "value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>new</span><span class='highlight-string'>Va</span>riable"
+        },
+        {
+          "key": "description",
+          "highlightString": "Create a <span class='highlight-string'>new</span> Job <span class='highlight-string'>va</span>riable by Job ID and assign it a value."
+        },
+        {
+          "key": "summary",
+          "highlightString": "Create a Job <span class='highlight-string'>Va</span>riable"
+        }
+      ],
+      "groups": [],
+      "x": 0.17445742904841402,
+      "y": 0.4826418289585097
+    },
+    "6bbe": {
+      "name": "evaluation",
+      "canvasName": "evaluation",
+      "summary": "Did artifact get removed?",
+      "description": "Did artifact get removed?",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "all_true_flag": false,
+          "evaluation_groups": [
+            {
+              "all_true_flag": false,
+              "evaluations": [
+                {
+                  "query": "",
+                  "operand_1": {
+                    "variable": "Delete",
+                    "task": "2bfe"
+                  },
+                  "operator": "==",
+                  "operand_2": {
+                    "variable": 1,
+                    "task": "static"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "outgoing": {
+          "return_value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>eval</span>uation"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Run <span class='highlight-string'>Eval</span>uation Task"
+        },
+        {
+          "key": "description",
+          "highlightString": "Run an <span class='highlight-string'>eval</span>uation"
+        }
+      ],
+      "groups": [],
+      "x": 0.42320534223706174,
+      "y": 0.7392040643522438
+    },
+    "b07e": {
+      "name": "ViewData",
+      "canvasName": "ViewData",
+      "summary": "View Data",
+      "description": "View data in a pretty format",
+      "location": "Application",
+      "app": "WorkFlowEngine",
+      "displayName": "Tools",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "header": "",
+          "message": "The following Artifacts did not get removed:",
+          "body": "$var.job.didNotDelete",
+          "variables": {},
+          "btn_success": "",
+          "btn_failure": ""
+        },
+        "outgoing": {},
+        "error": ""
+      },
+      "view": "/workflow_engine/task/ViewData",
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>ViewD</span>ata"
+        }
+      ],
+      "groups": [],
+      "x": 0.8530884808013356,
+      "y": 0.3861134631668078,
+      "scheduled": false
+    },
+    "5daa": {
+      "name": "arrayPush",
+      "canvasName": "push",
+      "summary": "Adds an element to a list of artifacts that did not get removed",
+      "description": "Adds an element to a list of artifacts that did not get removed",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Array",
+      "variables": {
+        "incoming": {
+          "arr": "$var.job.didNotDelete",
+          "elementN": "$var.e3b6.current_item"
+        },
+        "outgoing": {
+          "pushedArray": "$var.job.didNotDelete"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "displayName",
+          "highlightString": "<span class='highlight-string'>Arra</span>y"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Adds an element to the end of the <span class='highlight-string'>arra</span>y."
+        },
+        {
+          "key": "description",
+          "highlightString": "Adds one element to the end of an <span class='highlight-string'>arra</span>y and returns the (newly modified) array."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.5784641068447413,
+      "y": 0.8247248094834886,
+      "scheduled": false
+    },
+    "3b19": {
+      "name": "arrayLength",
+      "canvasName": "length",
+      "summary": "Gets the length of an array of artifacts that did not get deleted",
+      "description": "Gets the length of an array of artifacts that did not get deleted",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Array",
+      "variables": {
+        "incoming": {
+          "arr": "$var.job.didNotDelete"
+        },
+        "outgoing": {
+          "length": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>length</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Gets the <span class='highlight-string'>length</span> of an array."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.5901502504173622,
+      "y": 0.48687552921253174,
+      "scheduled": false
+    },
+    "b19e": {
+      "name": "transformation",
+      "canvasName": "transformation",
+      "summary": "JSON Transformation",
+      "description": "Perform a JSON Transformation using the JST library.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "tr_id": "5f7cd8a23847573af4852ec1",
+          "variableMap": {
+            "incomingFormData": "$var.job.formData"
+          },
+          "options": {
+            "extractOutput": true
+          }
+        },
+        "outgoing": {
+          "artifactIdArray": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "description",
+          "highlightString": "Perform a JSON Transformation using the <span class='highlight-string'>JST</span> library."
+        }
+      ],
+      "groups": [],
+      "x": 0.29799666110183637,
+      "y": 0.4928027095681626
+    },
+    "2bfe": {
+      "name": "shallowRemoveArtifactFromAdminEssentials",
+      "canvasName": "shallowRemoveArtifactFromAdminEssentials",
+      "summary": "Shallow removes an artifact from AE via direct mongo deletion",
+      "description": "Shallow removes an artifact from admin essentials",
+      "location": "Application",
+      "locationType": null,
+      "app": "AppArtifacts",
+      "type": "automatic",
+      "displayName": "AppArtifacts",
+      "variables": {
+        "incoming": {
+          "artifactName": "$var.e3b6.current_item"
+        },
+        "outgoing": {
+          "Delete": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>shall</span>owRemoveArtifactFromAdminEssentials"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Shall</span>ow removes an artifact from AE via direct mongo deletion"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Shall</span>ow removes an artifact from admin essentials"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.41986644407345575,
+      "y": 0.6299745977984759,
+      "scheduled": false
+    }
+  },
+  "transitions": {
+    "8596": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      },
+      "b07e": {
+        "type": "standard",
+        "state": "failure"
+      }
+    },
+    "workflow_start": {
+      "c00c": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "da09": {},
+    "e3b6": {
+      "3b19": {
+        "type": "standard",
+        "state": "success"
+      },
+      "2bfe": {
+        "type": "standard",
+        "state": "loop"
+      }
+    },
+    "c00c": {
+      "b19e": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "6bbe": {
+      "5daa": {
+        "type": "standard",
+        "state": "failure"
+      }
+    },
+    "b07e": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "5daa": {},
+    "3b19": {
+      "8596": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "b19e": {
+      "e3b6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "2bfe": {
+      "6bbe": {
+        "type": "standard",
+        "state": "success"
+      }
+    }
+  },
+  "font_size": 12,
+  "created": "2020-10-06T13:38:58.822Z",
+  "created_by": {
+    "provenance": "Itential AAA LDAP",
+    "username": "nick.andreano",
+    "firstname": "nick",
+    "inactive": true
+  },
+  "createdVersion": "5.10.4-2020.1.22.0",
+  "last_updated": "2021-11-09T14:55:00.526Z",
+  "last_updated_by": {
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "lastUpdatedVersion": "5.40.5-2021.1.59.0",
+  "type": "automation",
+  "description": null,
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "formData": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      }
+    },
+    "required": [
+      "formData"
+    ]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "formData": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      },
+      "didNotDelete": {
+        "title": "pushedArray",
+        "type": "array",
+        "examples": [
+          [
+            "Device1",
+            "Device2",
+            "Device3"
+          ]
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "groups": []
+}
