@@ -1,0 +1,197 @@
+{
+  "bundleName": "@itentialopensource/artifact-wizard",
+  "version": "0.0.1",
+  "fingerprint": "625d7fbdedf1799826edd273",
+  "createdEpoch": "1650294717997",
+  "artifacts": [
+    {
+      "id": "Artifact Wizard",
+      "name": "Artifact Wizard",
+      "type": "ac-agenda-job",
+      "location": "/bundles/ac_agenda_jobs/Artifact Wizard.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Shallow Remove Artifact",
+      "name": "Shallow Remove Artifact",
+      "type": "ac-agenda-job",
+      "location": "/bundles/ac_agenda_jobs/Shallow Remove Artifact.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "IAP Artifacts Artifact Wizard",
+      "name": "IAP Artifacts Artifact Wizard",
+      "type": "workflow",
+      "location": "/bundles/workflows/IAP Artifacts Artifact Wizard.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Shallow Remove Artifact",
+      "name": "Shallow Remove Artifact",
+      "type": "workflow",
+      "location": "/bundles/workflows/Shallow Remove Artifact.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "IAP Artifacts AW GitLab Update",
+      "name": "IAP Artifacts AW GitLab Update",
+      "type": "workflow",
+      "location": "/bundles/workflows/IAP Artifacts AW GitLab Update.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "IAP Artifacts AW GitLab Pull",
+      "name": "IAP Artifacts AW GitLab Pull",
+      "type": "workflow",
+      "location": "/bundles/workflows/IAP Artifacts AW GitLab Pull.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "IAP Artifacts AW Discover Components",
+      "name": "IAP Artifacts AW Discover Components",
+      "type": "workflow",
+      "location": "/bundles/workflows/IAP Artifacts AW Discover Components.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "IAP Artifacts AW Create Git Repo",
+      "name": "IAP Artifacts AW Create Git Repo",
+      "type": "workflow",
+      "location": "/bundles/workflows/IAP Artifacts AW Create Git Repo.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "IAP Artifacts AW Create Published Artifact",
+      "name": "IAP Artifacts AW Create Published Artifact",
+      "type": "workflow",
+      "location": "/bundles/workflows/IAP Artifacts AW Create Published Artifact.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "IAP Artifacts AW Install AE Artifact",
+      "name": "IAP Artifacts AW Install AE Artifact",
+      "type": "workflow",
+      "location": "/bundles/workflows/IAP Artifacts AW Install AE Artifact.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "IAP Artifacts AW GitLab Commit Data",
+      "name": "IAP Artifacts AW GitLab Commit Data",
+      "type": "workflow",
+      "location": "/bundles/workflows/IAP Artifacts AW GitLab Commit Data.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "IAP Artifacts AW Create Array",
+      "name": "IAP Artifacts AW Create Array",
+      "type": "workflow",
+      "location": "/bundles/workflows/IAP Artifacts AW Create Array.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "IAP Artifacts AW GitLab Create Link",
+      "name": "IAP Artifacts AW GitLab Create Link",
+      "type": "workflow",
+      "location": "/bundles/workflows/IAP Artifacts AW GitLab Create Link.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Artifact Wizard Config Form",
+      "name": "Artifact Wizard Config Form",
+      "type": "json-forms",
+      "location": "/bundles/json_forms/Artifact Wizard Config Form.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Shallow Remove Artifact",
+      "name": "Shallow Remove Artifact",
+      "type": "json-forms",
+      "location": "/bundles/json_forms/Shallow Remove Artifact.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Artifact Components",
+      "name": "Artifact Components",
+      "type": "json-forms",
+      "location": "/bundles/json_forms/Artifact Components.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Artifact Metadata",
+      "name": "Artifact Metadata",
+      "type": "json-forms",
+      "location": "/bundles/json_forms/Artifact Metadata.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f7cd8a23847573af4852ec1",
+      "name": "GetArtifactIds_ShallowRemove",
+      "type": "transformation",
+      "location": "/bundles/transformations/GetArtifactIds_ShallowRemove.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f287844d76d950aa5f59814",
+      "name": "Create prebuilt - Fix packagejson",
+      "type": "transformation",
+      "location": "/bundles/transformations/Create prebuilt - Fix packagejson.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "5f0c9dae10b81c2da7cf6023",
+      "name": "toRepoName",
+      "type": "transformation",
+      "location": "/bundles/transformations/toRepoName.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "60026031e30efd085ffcfb57",
+      "name": "changeScopePackageJson",
+      "type": "transformation",
+      "location": "/bundles/transformations/changeScopePackageJson.json",
+      "properties": {
+        "entryPoint": false
+      }
+    }
+  ]
+}
