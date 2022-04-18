@@ -1,0 +1,32 @@
+{
+  "_id": "618a8bc5c03d3333d02c60f8",
+  "name": "Artifact Wizard",
+  "data": {
+    "description": "create and publish custom artifacts",
+    "workflowId": "IAP Artifacts Artifact Wizard",
+    "formId": "Artifact Wizard Config Form",
+    "formData": {
+      "newArtifact": {
+        "zeroTouch": false,
+        "installIntoAdminEssentialsAndDownload": true,
+        "createGitlabRepository": false,
+        "scope": "@itentialopensource"
+      },
+      "updateArtifact": {}
+    },
+    "gbac": {
+      "write": [],
+      "read": []
+    },
+    "lastUpdated": "2021-01-26T14:08:59.672Z",
+    "modifiedById": "6180307394366d356e0a4259",
+    "modifiedByUsername": "admin@pronghorn"
+  },
+  "lastModifiedBy": "Nicks-MacBook-Pro.local:21278",
+  "lastRunAt": null,
+  "nextRunAt": null,
+  "priority": 0,
+  "repeatInterval": null,
+  "repeatTimezone": null,
+  "type": "normal"
+}
