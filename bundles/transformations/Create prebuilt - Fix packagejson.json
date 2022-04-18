@@ -1,0 +1,1960 @@
+{
+  "_id": "5f287844d76d950aa5f59814",
+  "name": "Create prebuilt - Fix packagejson",
+  "description": "This JST take in the JSON that would compose an artifact.json file and fixes the package.json entry to have the correct metadata",
+  "incoming": [
+    {
+      "$id": "incoming",
+      "type": "object",
+      "properties": {
+        "update": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "examples": [
+                  "README%2Emd"
+                ]
+              },
+              "type": {
+                "type": "string",
+                "examples": [
+                  "file"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "examples": [
+                  "<!-- This is a comment in md (Markdown) format, it will not be visible to the end user -->\n\n<!-- Update the below line with your Pre-Built name -->\n# Pre-Built Name\n\n<!-- Leave TOC intact unless you've added or removed headers -->\n## Table of Contents\n\n* [Overview](#overview)\n* [Installation Prerequisites](#installation-prerequisites)\n* [Requirements](#requirements)\n* [Features](#features)\n* [Future Enhancements](#future-enhancements)\n* [How to Install](#how-to-install)\n* [How to Run](#how-to-run)\n* [Additional Information](#additional-information)\n\n## Overview\n\n<!-- Write a few sentences about the Pre-Built and explain the use case(s) -->\n<!-- Avoid using the word Artifact%2E Please use Pre-Built, Pre-Built Transformation or Pre-Built Automation -->\n<!-- Ex%2E: The Migration Wizard enables IAP users to conveniently move their automation use cases between different IAP environments -->\n<!-- (e%2Eg%2E from Dev to Pre-Production or from Lab to Production)%2E -->\n\n<!-- Workflow(s) Image Placeholder - TO BE ADDED DIRECTLY TO GitLab -->\n<!-- REPLACE COMMENT BELOW WITH IMAGE OF YOUR MAIN WORKFLOW -->\n<!--\n<table><tr><td>\n  <img src=\"./images/workflow.png\" alt=\"workflow\" width=\"800px\">\n</td></tr></table>\n-->\n<!-- REPLACE COMMENT ABOVE WITH IMAGE OF YOUR MAIN WORKFLOW -->\n\n<!-- ADD ESTIMATED RUN TIME HERE -->\n<!-- e%2Eg%2E Estimated Run Time: 34 min%2E -->\n_Estimated Run Time_:\n\n## Installation Prerequisites\n\nUsers must satisfy the following pre-requisites:\n\n<!-- Include any other required apps or adapters in this list -->\n<!-- Ex%2E: EC2 Adapter -->\n* Itential Automation Platform\n  * `^2021%2E1`\n\n## Requirements\n\nThis Pre-Built requires the following:\n\n<!-- Unordered list highlighting the requirements of the Pre-Built -->\n<!-- EXAMPLE -->\n<!-- * cisco ios device -->\n<!-- * Ansible or NSO (with F5 NED) * -->\n\n## Features\n\nThe main benefits and features of the Pre-Built are outlined below%2E\n\n<!-- Unordered list highlighting the most exciting features of the Pre-Built -->\n<!-- EXAMPLE -->\n<!-- * Automatically checks for device type -->\n<!-- * Displays dry-run to user (asking for confirmation) prior to pushing config to the device -->\n<!-- * Verifies downloaded file integrity (using md5), will try to download again if failed -->\n\n\n## Future Enhancements\n\n<!-- OPTIONAL - Mention if the Pre-Built will be enhanced with additional features on the road map -->\n<!-- Ex%2E: This Pre-Built would support Cisco XR and F5 devices -->\n\n## How to Install\n\nTo install the Pre-Built:\n\n* Verify you are running a supported version of the Itential Automation Platform (IAP) as listed above in the [Requirements](#requirements) section in order to install the Pre-Built%2E \n* The Pre-Built can be installed from within App-Admin_Essential%2E Simply search for the name of your desired Pre-Built and click the install button (as shown below)%2E\n\n<!-- REPLACE BELOW WITH IMAGE OF YOUR PUBLISHED PRE-BUILT -->\n<!--\n<table><tr><td>\n  <img src=\"./images/install.png\" alt=\"install\" width=\"600px\">\n</td></tr></table>\n-->\n<!-- REPLACE ABOVE WITH IMAGE OF YOUR PUBLISHED PRE-BUILT -->\n\n<!-- OPTIONAL - Explain if external components are required outside of IAP -->\n<!-- Ex%2E: The Ansible roles required for this Pre-Built can be found in the repository located at https://gitlab%2Ecom/itentialopensource/pre-built-automations/hello-world -->\n\n## How to Run\n\nUse the following to run the Pre-Built:\n\n<!-- Explain the main entrypoint(s) for this Pre-Built: Automation Catalog item, Workflow, Postman, etc%2E -->\n\n## Additional Information\n\nPlease use your Itential Customer Success account if you need support when using this Pre-Built%2E\n"
+                ]
+              }
+            },
+            "required": []
+          },
+          "$id": "update"
+        },
+        "create": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "examples": [
+                  "bundles"
+                ]
+              },
+              "type": {
+                "type": "string",
+                "examples": [
+                  "directory"
+                ]
+              },
+              "content": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "examples": [
+                        "ac_agenda_jobs"
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "examples": [
+                        "directory"
+                      ]
+                    },
+                    "content": {
+                      "type": "array"
+                    }
+                  },
+                  "required": []
+                }
+              }
+            },
+            "required": []
+          },
+          "$id": "create"
+        }
+      },
+      "required": []
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "outgoing",
+      "type": "object",
+      "properties": {
+        "update": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "examples": [
+                  "README.md"
+                ]
+              },
+              "type": {
+                "type": "string",
+                "examples": [
+                  "file"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "examples": [
+                  "\n\n\n# Artifact Name\n\n\n## Table of Contents\n\n* [Overview](#overview)\n* [Installation Prerequisites](#installation-prerequisites)\n* [Requirements](#requirements)\n* [Features](#features)\n* [Future Enhancements](#future-enhancements)\n* [How to Install](#how-to-install)\n* [How to Run](#how-to-run)\n\n## Overview\n\n\n\n\n\n\n\n\n\n\n\n\n_Estimated Run Time_:\n\n## Installation Prerequisites\n\nUsers must satisfy the following pre-requisites:\n\n\n\n* Itential Automation Platform\n  * `^2020.x.x`\n\n## Requirements\n\nThis artifact requires the following:\n\n\n\n\n\n\n## Features\n\nThe main benefits and features of the artifact are outlined below.\n\n\n\n\n\n\n\n\n## Future Enhancements\n\n\n\n\n## How to Install\n\nTo install the artifact:\n\n* Verify you are running a supported version of the Itential Automation Platform (IAP) as listed above in the [Requirements](#requirements) section in order to install the artifact. \n* The artifact can be installed from within App-Admin_Essential. Simply search for the name of your desired artifact and click the install button (as shown below).\n\n\n\n\n\n\n\n\n## How to Run\n\nUse the following to run the artifact:\n\n\n"
+                ]
+              }
+            },
+            "required": []
+          }
+        },
+        "create": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "examples": [
+                  "bundles"
+                ]
+              },
+              "type": {
+                "type": "string",
+                "examples": [
+                  "directory"
+                ]
+              },
+              "content": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "examples": [
+                        "ac_agenda_jobs"
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "examples": [
+                        "directory"
+                      ]
+                    },
+                    "content": {
+                      "type": "array"
+                    }
+                  },
+                  "required": []
+                }
+              }
+            },
+            "required": []
+          }
+        }
+      },
+      "required": []
+    }
+  ],
+  "steps": [
+    {
+      "id": 3,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "incoming",
+        "ptr": "/create"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "outgoing",
+        "ptr": "/create"
+      }
+    },
+    {
+      "id": 4,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "incoming",
+        "ptr": "/update"
+      },
+      "to": {
+        "location": "method",
+        "name": 2,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 5,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "incoming",
+        "ptr": "/update"
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 1,
+      "type": "method",
+      "library": "Array",
+      "method": "filter",
+      "args": [
+        null,
+        "ƒ_query_2"
+      ],
+      "view": {
+        "row": 2,
+        "col": 1
+      }
+    },
+    {
+      "id": 2,
+      "type": "method",
+      "library": "Array",
+      "method": "filter",
+      "args": [
+        null,
+        "ƒ_query_1"
+      ],
+      "view": {
+        "row": 1,
+        "col": 1
+      }
+    },
+    {
+      "id": 7,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 2,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 9,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 8,
+        "ptr": "/args/0/value"
+      }
+    },
+    {
+      "id": 6,
+      "type": "method",
+      "library": "Array",
+      "method": "map",
+      "args": [
+        null,
+        "ƒ_map_1"
+      ],
+      "view": {
+        "row": 3,
+        "col": 2
+      }
+    },
+    {
+      "id": 10,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 6,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "method",
+        "name": 8,
+        "ptr": "/args/1/value"
+      }
+    },
+    {
+      "id": 8,
+      "type": "method",
+      "library": "Array",
+      "method": "concat",
+      "args": [
+        null,
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 3
+      }
+    },
+    {
+      "id": 11,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 8,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "outgoing",
+        "ptr": "/update"
+      }
+    }
+  ],
+  "functions": [
+    {
+      "incoming": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "examples": [
+                "README.md"
+              ]
+            },
+            "type": {
+              "type": "string",
+              "examples": [
+                "file"
+              ]
+            },
+            "content": {
+              "type": "string",
+              "examples": [
+                "\n\n\n# Artifact Name\n\n\n## Table of Contents\n\n* [Overview](#overview)\n* [Installation Prerequisites](#installation-prerequisites)\n* [Requirements](#requirements)\n* [Features](#features)\n* [Future Enhancements](#future-enhancements)\n* [How to Install](#how-to-install)\n* [How to Run](#how-to-run)\n\n## Overview\n\n\n\n\n\n\n\n\n\n\n\n\n_Estimated Run Time_:\n\n## Installation Prerequisites\n\nUsers must satisfy the following pre-requisites:\n\n\n\n* Itential Automation Platform\n  * `^2020.x.x`\n\n## Requirements\n\nThis artifact requires the following:\n\n\n\n\n\n\n## Features\n\nThe main benefits and features of the artifact are outlined below.\n\n\n\n\n\n\n\n\n## Future Enhancements\n\n\n\n\n## How to Install\n\nTo install the artifact:\n\n* Verify you are running a supported version of the Itential Automation Platform (IAP) as listed above in the [Requirements](#requirements) section in order to install the artifact. \n* The artifact can be installed from within App-Admin_Essential. Simply search for the name of your desired artifact and click the install button (as shown below).\n\n\n\n\n\n\n\n\n## How to Run\n\nUse the following to run the artifact:\n\n\n"
+              ]
+            }
+          },
+          "required": [],
+          "$id": "element"
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "examples": [
+                  "README.md"
+                ]
+              },
+              "type": {
+                "type": "string",
+                "examples": [
+                  "file"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "examples": [
+                  "\n\n\n# Artifact Name\n\n\n## Table of Contents\n\n* [Overview](#overview)\n* [Installation Prerequisites](#installation-prerequisites)\n* [Requirements](#requirements)\n* [Features](#features)\n* [Future Enhancements](#future-enhancements)\n* [How to Install](#how-to-install)\n* [How to Run](#how-to-run)\n\n## Overview\n\n\n\n\n\n\n\n\n\n\n\n\n_Estimated Run Time_:\n\n## Installation Prerequisites\n\nUsers must satisfy the following pre-requisites:\n\n\n\n* Itential Automation Platform\n  * `^2020.x.x`\n\n## Requirements\n\nThis artifact requires the following:\n\n\n\n\n\n\n## Features\n\nThe main benefits and features of the artifact are outlined below.\n\n\n\n\n\n\n\n\n## Future Enhancements\n\n\n\n\n## How to Install\n\nTo install the artifact:\n\n* Verify you are running a supported version of the Itential Automation Platform (IAP) as listed above in the [Requirements](#requirements) section in order to install the artifact. \n* The artifact can be installed from within App-Admin_Essential. Simply search for the name of your desired artifact and click the install button (as shown below).\n\n\n\n\n\n\n\n\n## How to Run\n\nUse the following to run the artifact:\n\n\n"
+                ]
+              }
+            },
+            "required": []
+          },
+          "$id": "array"
+        },
+        {
+          "$id": "thisArg",
+          "type": "object",
+          "properties": {},
+          "isContext": true,
+          "isIndexed": true
+        }
+      ],
+      "outgoing": [
+        {
+          "title": "return",
+          "type": "boolean",
+          "$id": "return"
+        }
+      ],
+      "functions": [],
+      "name": "isPackageJSON",
+      "steps": [
+        {
+          "id": 4,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "element",
+            "ptr": "/name"
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 1,
+          "type": "method",
+          "library": "Equality",
+          "method": "equality",
+          "args": [
+            null,
+            "package.json"
+          ],
+          "view": {
+            "row": 1,
+            "col": 1
+          }
+        },
+        {
+          "id": 3,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "return",
+            "ptr": ""
+          }
+        }
+      ],
+      "view": {
+        "col": 1,
+        "row": 5
+      },
+      "id": "ƒ_query_1",
+      "comments": []
+    },
+    {
+      "incoming": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "examples": [
+                "README.md"
+              ]
+            },
+            "type": {
+              "type": "string",
+              "examples": [
+                "file"
+              ]
+            },
+            "content": {
+              "type": "string",
+              "examples": [
+                "\n\n\n# Artifact Name\n\n\n## Table of Contents\n\n* [Overview](#overview)\n* [Installation Prerequisites](#installation-prerequisites)\n* [Requirements](#requirements)\n* [Features](#features)\n* [Future Enhancements](#future-enhancements)\n* [How to Install](#how-to-install)\n* [How to Run](#how-to-run)\n\n## Overview\n\n\n\n\n\n\n\n\n\n\n\n\n_Estimated Run Time_:\n\n## Installation Prerequisites\n\nUsers must satisfy the following pre-requisites:\n\n\n\n* Itential Automation Platform\n  * `^2020.x.x`\n\n## Requirements\n\nThis artifact requires the following:\n\n\n\n\n\n\n## Features\n\nThe main benefits and features of the artifact are outlined below.\n\n\n\n\n\n\n\n\n## Future Enhancements\n\n\n\n\n## How to Install\n\nTo install the artifact:\n\n* Verify you are running a supported version of the Itential Automation Platform (IAP) as listed above in the [Requirements](#requirements) section in order to install the artifact. \n* The artifact can be installed from within App-Admin_Essential. Simply search for the name of your desired artifact and click the install button (as shown below).\n\n\n\n\n\n\n\n\n## How to Run\n\nUse the following to run the artifact:\n\n\n"
+              ]
+            }
+          },
+          "required": [],
+          "$id": "element"
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "examples": [
+                  "README.md"
+                ]
+              },
+              "type": {
+                "type": "string",
+                "examples": [
+                  "file"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "examples": [
+                  "\n\n\n# Artifact Name\n\n\n## Table of Contents\n\n* [Overview](#overview)\n* [Installation Prerequisites](#installation-prerequisites)\n* [Requirements](#requirements)\n* [Features](#features)\n* [Future Enhancements](#future-enhancements)\n* [How to Install](#how-to-install)\n* [How to Run](#how-to-run)\n\n## Overview\n\n\n\n\n\n\n\n\n\n\n\n\n_Estimated Run Time_:\n\n## Installation Prerequisites\n\nUsers must satisfy the following pre-requisites:\n\n\n\n* Itential Automation Platform\n  * `^2020.x.x`\n\n## Requirements\n\nThis artifact requires the following:\n\n\n\n\n\n\n## Features\n\nThe main benefits and features of the artifact are outlined below.\n\n\n\n\n\n\n\n\n## Future Enhancements\n\n\n\n\n## How to Install\n\nTo install the artifact:\n\n* Verify you are running a supported version of the Itential Automation Platform (IAP) as listed above in the [Requirements](#requirements) section in order to install the artifact. \n* The artifact can be installed from within App-Admin_Essential. Simply search for the name of your desired artifact and click the install button (as shown below).\n\n\n\n\n\n\n\n\n## How to Run\n\nUse the following to run the artifact:\n\n\n"
+                ]
+              }
+            },
+            "required": []
+          },
+          "$id": "array"
+        },
+        {
+          "$id": "thisArg",
+          "type": "object",
+          "properties": {},
+          "isContext": true,
+          "isIndexed": true
+        }
+      ],
+      "outgoing": [
+        {
+          "title": "return",
+          "type": "boolean",
+          "$id": "return"
+        }
+      ],
+      "functions": [],
+      "name": "notPackageJSON",
+      "steps": [
+        {
+          "id": 2,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "element",
+            "ptr": "/name"
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 1,
+          "type": "method",
+          "library": "Equality",
+          "method": "inequality",
+          "args": [
+            null,
+            "package.json"
+          ],
+          "view": {
+            "row": 1,
+            "col": 1
+          }
+        },
+        {
+          "id": 3,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "return",
+            "ptr": ""
+          }
+        }
+      ],
+      "view": {
+        "col": 1,
+        "row": 5
+      },
+      "id": "ƒ_query_2",
+      "comments": []
+    },
+    {
+      "incoming": [
+        {
+          "$id": "currentValue",
+          "type": [
+            "array",
+            "boolean",
+            "number",
+            "integer",
+            "string",
+            "object",
+            "null"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "examples": [
+                "README.md"
+              ]
+            },
+            "type": {
+              "type": "string",
+              "examples": [
+                "file"
+              ]
+            },
+            "content": {
+              "type": "string",
+              "examples": [
+                "\n\n\n# Artifact Name\n\n\n## Table of Contents\n\n* [Overview](#overview)\n* [Installation Prerequisites](#installation-prerequisites)\n* [Requirements](#requirements)\n* [Features](#features)\n* [Future Enhancements](#future-enhancements)\n* [How to Install](#how-to-install)\n* [How to Run](#how-to-run)\n\n## Overview\n\n\n\n\n\n\n\n\n\n\n\n\n_Estimated Run Time_:\n\n## Installation Prerequisites\n\nUsers must satisfy the following pre-requisites:\n\n\n\n* Itential Automation Platform\n  * `^2020.x.x`\n\n## Requirements\n\nThis artifact requires the following:\n\n\n\n\n\n\n## Features\n\nThe main benefits and features of the artifact are outlined below.\n\n\n\n\n\n\n\n\n## Future Enhancements\n\n\n\n\n## How to Install\n\nTo install the artifact:\n\n* Verify you are running a supported version of the Itential Automation Platform (IAP) as listed above in the [Requirements](#requirements) section in order to install the artifact. \n* The artifact can be installed from within App-Admin_Essential. Simply search for the name of your desired artifact and click the install button (as shown below).\n\n\n\n\n\n\n\n\n## How to Run\n\nUse the following to run the artifact:\n\n\n"
+              ]
+            }
+          },
+          "required": []
+        },
+        {
+          "title": "index",
+          "type": "number",
+          "$id": "index"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "examples": [
+                  "README.md"
+                ]
+              },
+              "type": {
+                "type": "string",
+                "examples": [
+                  "file"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "examples": [
+                  "\n\n\n# Artifact Name\n\n\n## Table of Contents\n\n* [Overview](#overview)\n* [Installation Prerequisites](#installation-prerequisites)\n* [Requirements](#requirements)\n* [Features](#features)\n* [Future Enhancements](#future-enhancements)\n* [How to Install](#how-to-install)\n* [How to Run](#how-to-run)\n\n## Overview\n\n\n\n\n\n\n\n\n\n\n\n\n_Estimated Run Time_:\n\n## Installation Prerequisites\n\nUsers must satisfy the following pre-requisites:\n\n\n\n* Itential Automation Platform\n  * `^2020.x.x`\n\n## Requirements\n\nThis artifact requires the following:\n\n\n\n\n\n\n## Features\n\nThe main benefits and features of the artifact are outlined below.\n\n\n\n\n\n\n\n\n## Future Enhancements\n\n\n\n\n## How to Install\n\nTo install the artifact:\n\n* Verify you are running a supported version of the Itential Automation Platform (IAP) as listed above in the [Requirements](#requirements) section in order to install the artifact. \n* The artifact can be installed from within App-Admin_Essential. Simply search for the name of your desired artifact and click the install button (as shown below).\n\n\n\n\n\n\n\n\n## How to Run\n\nUse the following to run the artifact:\n\n\n"
+                ]
+              }
+            },
+            "required": []
+          },
+          "$id": "array"
+        },
+        {
+          "$id": "thisArg",
+          "type": "object",
+          "properties": {},
+          "isContext": true,
+          "isIndexed": true
+        }
+      ],
+      "outgoing": [
+        {
+          "$id": "newValue",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "examples": [
+                "README.md"
+              ]
+            },
+            "type": {
+              "type": "string",
+              "examples": [
+                "file"
+              ]
+            },
+            "content": {
+              "type": "string",
+              "examples": [
+                "\n\n\n# Artifact Name\n\n\n## Table of Contents\n\n* [Overview](#overview)\n* [Installation Prerequisites](#installation-prerequisites)\n* [Requirements](#requirements)\n* [Features](#features)\n* [Future Enhancements](#future-enhancements)\n* [How to Install](#how-to-install)\n* [How to Run](#how-to-run)\n\n## Overview\n\n\n\n\n\n\n\n\n\n\n\n\n_Estimated Run Time_:\n\n## Installation Prerequisites\n\nUsers must satisfy the following pre-requisites:\n\n\n\n* Itential Automation Platform\n  * `^2020.x.x`\n\n## Requirements\n\nThis artifact requires the following:\n\n\n\n\n\n\n## Features\n\nThe main benefits and features of the artifact are outlined below.\n\n\n\n\n\n\n\n\n## Future Enhancements\n\n\n\n\n## How to Install\n\nTo install the artifact:\n\n* Verify you are running a supported version of the Itential Automation Platform (IAP) as listed above in the [Requirements](#requirements) section in order to install the artifact. \n* The artifact can be installed from within App-Admin_Essential. Simply search for the name of your desired artifact and click the install button (as shown below).\n\n\n\n\n\n\n\n\n## How to Run\n\nUse the following to run the artifact:\n\n\n"
+              ]
+            }
+          },
+          "required": []
+        }
+      ],
+      "functions": [
+        {
+          "incoming": [
+            {
+              "$id": "packageJSON",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "examples": [
+                    "@itentialopensource/this is a test"
+                  ]
+                },
+                "version": {
+                  "type": "string",
+                  "examples": [
+                    "0%2E0%2E1"
+                  ]
+                },
+                "description": {
+                  "type": "string",
+                  "examples": [
+                    "k"
+                  ]
+                },
+                "scripts": {
+                  "type": "object",
+                  "properties": {
+                    "test": {
+                      "type": "string",
+                      "examples": [
+                        "echo \"Error: no test specified\" && exit 1"
+                      ]
+                    },
+                    "deploy": {
+                      "type": "string",
+                      "examples": [
+                        "echo not needed npm publish --access=public --registry=http://registry%2Enpmjs%2Eorg"
+                      ]
+                    },
+                    "validateSchema": {
+                      "type": "string",
+                      "examples": [
+                        "node test/manifestTester%2Ejs manifest%2Ejson manifest-schema%2Ejson"
+                      ]
+                    },
+                    "validateSchemaLinks": {
+                      "type": "string",
+                      "examples": [
+                        "node test/manifestLinkTester%2Ejs manifest%2Ejson"
+                      ]
+                    },
+                    "generateImageLinks": {
+                      "type": "string",
+                      "examples": [
+                        "node utils/generateImageLinks%2Ejs"
+                      ]
+                    }
+                  },
+                  "required": []
+                },
+                "repository": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "examples": [
+                        "gitlab"
+                      ]
+                    },
+                    "hostname": {
+                      "type": "string",
+                      "examples": [
+                        "gitlab%2Ecom"
+                      ]
+                    },
+                    "path": {
+                      "type": "string",
+                      "examples": [
+                        "itentialopensource/pre-built-automations"
+                      ]
+                    }
+                  },
+                  "required": []
+                },
+                "keywords": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "examples": [
+                      "Itential"
+                    ]
+                  }
+                },
+                "contributors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "examples": [
+                      "Itential Artifacts"
+                    ]
+                  }
+                },
+                "author": {
+                  "type": "string",
+                  "examples": [
+                    "Itential Artifacts"
+                  ]
+                },
+                "license": {
+                  "type": "string",
+                  "examples": [
+                    "Apache-2%2E0"
+                  ]
+                },
+                "devDependencies": {
+                  "type": "object",
+                  "properties": {
+                    "r2": {
+                      "type": "string",
+                      "examples": [
+                        "^2%2E0%2E1"
+                      ]
+                    },
+                    "ajv": {
+                      "type": "string",
+                      "examples": [
+                        "6%2E10%2E0"
+                      ]
+                    },
+                    "better-ajv-errors": {
+                      "type": "string",
+                      "examples": [
+                        "^0%2E6%2E1"
+                      ]
+                    },
+                    "fs-extra": {
+                      "type": "string",
+                      "examples": [
+                        "^7%2E0%2E1"
+                      ]
+                    }
+                  },
+                  "required": []
+                },
+                "IAPDependencies": {
+                  "type": "object",
+                  "properties": {},
+                  "required": []
+                },
+                "IAPCategories": {
+                  "type": "array"
+                }
+              },
+              "required": []
+            },
+            {
+              "$id": "packageJSON_copy",
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "string",
+                  "examples": [
+                    "0%2E0%2E1"
+                  ]
+                },
+                "description": {
+                  "type": "string",
+                  "examples": [
+                    "Default artifact description"
+                  ]
+                },
+                "scripts": {
+                  "type": "object",
+                  "properties": {
+                    "test": {
+                      "type": "string",
+                      "examples": [
+                        "echo \"Error: no test specified\" && exit 1"
+                      ]
+                    },
+                    "deploy": {
+                      "type": "string",
+                      "examples": [
+                        "echo not needed npm publish --access=public --registry=http://registry%2Enpmjs%2Eorg"
+                      ]
+                    },
+                    "validateSchema": {
+                      "type": "string",
+                      "examples": [
+                        "node test/manifestTester%2Ejs manifest%2Ejson manifest-schema%2Ejson"
+                      ]
+                    },
+                    "validateSchemaLinks": {
+                      "type": "string",
+                      "examples": [
+                        "node test/manifestLinkTester%2Ejs manifest%2Ejson"
+                      ]
+                    },
+                    "generateImageLinks": {
+                      "type": "string",
+                      "examples": [
+                        "node utils/generateImageLinks%2Ejs"
+                      ]
+                    }
+                  },
+                  "required": []
+                },
+                "repository": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "examples": [
+                        "gitlab"
+                      ]
+                    },
+                    "hostname": {
+                      "type": "string",
+                      "examples": [
+                        "gitlab%2Ecom"
+                      ]
+                    },
+                    "path": {
+                      "type": "string",
+                      "examples": [
+                        "itentialopensource/pre-built-automations"
+                      ]
+                    }
+                  },
+                  "required": []
+                },
+                "keywords": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "examples": [
+                      "Itential"
+                    ]
+                  }
+                },
+                "contributors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "examples": [
+                      "Itential Artifacts"
+                    ]
+                  }
+                },
+                "author": {
+                  "type": "string",
+                  "examples": [
+                    "Itential Artifacts"
+                  ]
+                },
+                "license": {
+                  "type": "string",
+                  "examples": [
+                    "Apache-2%2E0"
+                  ]
+                },
+                "devDependencies": {
+                  "type": "object",
+                  "properties": {
+                    "r2": {
+                      "type": "string",
+                      "examples": [
+                        "^2%2E0%2E1"
+                      ]
+                    },
+                    "ajv": {
+                      "type": "string",
+                      "examples": [
+                        "6%2E10%2E0"
+                      ]
+                    },
+                    "better-ajv-errors": {
+                      "type": "string",
+                      "examples": [
+                        "^0%2E6%2E1"
+                      ]
+                    },
+                    "fs-extra": {
+                      "type": "string",
+                      "examples": [
+                        "^7%2E0%2E1"
+                      ]
+                    }
+                  },
+                  "required": []
+                },
+                "name": {
+                  "type": "string",
+                  "examples": [
+                    "@itentialoperations/new hire on boarding"
+                  ]
+                },
+                "IAPDependencies": {
+                  "type": "object",
+                  "properties": {
+                    "@itential/app-automation_catalog": {
+                      "type": "string",
+                      "examples": [
+                        "2%2E6%2E6"
+                      ]
+                    },
+                    "@itential/app-json_forms": {
+                      "type": "string",
+                      "examples": [
+                        "1%2E14%2E10"
+                      ]
+                    },
+                    "@itential/app-workflow_engine": {
+                      "type": "string",
+                      "examples": [
+                        "7%2E14%2E4"
+                      ]
+                    }
+                  },
+                  "required": []
+                },
+                "IAPCategories": {
+                  "type": "array"
+                }
+              },
+              "required": []
+            }
+          ],
+          "outgoing": [
+            {
+              "$id": "fixedPackageJSON",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "examples": [
+                    "@itentialopensource/this is a test"
+                  ]
+                },
+                "version": {
+                  "type": "string",
+                  "examples": [
+                    "0%2E0%2E1"
+                  ]
+                },
+                "description": {
+                  "type": "string",
+                  "examples": [
+                    "k"
+                  ]
+                },
+                "scripts": {
+                  "type": "object",
+                  "properties": {
+                    "test": {
+                      "type": "string",
+                      "examples": [
+                        "echo \"Error: no test specified\" && exit 1"
+                      ]
+                    },
+                    "deploy": {
+                      "type": "string",
+                      "examples": [
+                        "echo not needed npm publish --access=public --registry=http://registry%2Enpmjs%2Eorg"
+                      ]
+                    },
+                    "validateSchema": {
+                      "type": "string",
+                      "examples": [
+                        "node test/manifestTester%2Ejs manifest%2Ejson manifest-schema%2Ejson"
+                      ]
+                    },
+                    "validateSchemaLinks": {
+                      "type": "string",
+                      "examples": [
+                        "node test/manifestLinkTester%2Ejs manifest%2Ejson"
+                      ]
+                    },
+                    "generateImageLinks": {
+                      "type": "string",
+                      "examples": [
+                        "node utils/generateImageLinks%2Ejs"
+                      ]
+                    }
+                  },
+                  "required": []
+                },
+                "repository": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "examples": [
+                        "gitlab"
+                      ]
+                    },
+                    "hostname": {
+                      "type": "string",
+                      "examples": [
+                        "gitlab%2Ecom"
+                      ]
+                    },
+                    "path": {
+                      "type": "string",
+                      "examples": [
+                        "itentialopensource/pre-built-automations"
+                      ]
+                    }
+                  },
+                  "required": []
+                },
+                "keywords": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "examples": [
+                      "Itential"
+                    ]
+                  }
+                },
+                "contributors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "examples": [
+                      "Itential Artifacts"
+                    ]
+                  }
+                },
+                "author": {
+                  "type": "string",
+                  "examples": [
+                    "Itential Artifacts"
+                  ]
+                },
+                "license": {
+                  "type": "string",
+                  "examples": [
+                    "Apache-2%2E0"
+                  ]
+                },
+                "devDependencies": {
+                  "type": "object",
+                  "properties": {
+                    "r2": {
+                      "type": "string",
+                      "examples": [
+                        "^2%2E0%2E1"
+                      ]
+                    },
+                    "ajv": {
+                      "type": "string",
+                      "examples": [
+                        "6%2E10%2E0"
+                      ]
+                    },
+                    "better-ajv-errors": {
+                      "type": "string",
+                      "examples": [
+                        "^0%2E6%2E1"
+                      ]
+                    },
+                    "fs-extra": {
+                      "type": "string",
+                      "examples": [
+                        "^7%2E0%2E1"
+                      ]
+                    }
+                  },
+                  "required": []
+                },
+                "IAPDependencies": {
+                  "type": "object",
+                  "properties": {},
+                  "required": []
+                },
+                "IAPCategories": {
+                  "type": "array"
+                }
+              },
+              "required": []
+            }
+          ],
+          "functions": [
+            {
+              "incoming": [
+                {
+                  "type": [
+                    "array",
+                    "boolean",
+                    "number",
+                    "integer",
+                    "string",
+                    "object",
+                    "null"
+                  ],
+                  "$id": "accumulator"
+                },
+                {
+                  "type": [
+                    "array",
+                    "boolean",
+                    "number",
+                    "integer",
+                    "string",
+                    "object",
+                    "null"
+                  ],
+                  "$id": "currentValue"
+                },
+                {
+                  "title": "index",
+                  "type": "number",
+                  "$id": "index"
+                },
+                {
+                  "type": "array",
+                  "$id": "array"
+                },
+                {
+                  "$id": "thisArg",
+                  "type": "object",
+                  "properties": {
+                    "0_IAPDependencies": {
+                      "type": "object",
+                      "properties": {},
+                      "required": []
+                    }
+                  },
+                  "isContext": true,
+                  "isIndexed": true
+                }
+              ],
+              "outgoing": [
+                {
+                  "title": "accumulator",
+                  "type": [
+                    "array",
+                    "boolean",
+                    "number",
+                    "integer",
+                    "string",
+                    "object",
+                    "null"
+                  ],
+                  "$id": "accumulator"
+                }
+              ],
+              "functions": [],
+              "name": "setIAPDependancyAsEmpty",
+              "steps": [
+                {
+                  "id": 2,
+                  "type": "assign",
+                  "from": {
+                    "location": "incoming",
+                    "name": "accumulator",
+                    "ptr": ""
+                  },
+                  "to": {
+                    "location": "method",
+                    "name": 1,
+                    "ptr": "/args/0/value"
+                  }
+                },
+                {
+                  "id": 3,
+                  "type": "assign",
+                  "from": {
+                    "location": "incoming",
+                    "name": "currentValue",
+                    "ptr": ""
+                  },
+                  "to": {
+                    "location": "method",
+                    "name": 1,
+                    "ptr": "/args/1/value"
+                  }
+                },
+                {
+                  "id": 4,
+                  "type": "method",
+                  "library": "String",
+                  "method": "charAt",
+                  "args": [
+                    "0",
+                    1
+                  ],
+                  "view": {
+                    "row": 2,
+                    "col": 1
+                  }
+                },
+                {
+                  "id": 5,
+                  "type": "assign",
+                  "from": {
+                    "location": "method",
+                    "name": 4,
+                    "ptr": "/return"
+                  },
+                  "to": {
+                    "location": "method",
+                    "name": 1,
+                    "ptr": "/args/2/value"
+                  }
+                },
+                {
+                  "id": 1,
+                  "type": "method",
+                  "library": "Object",
+                  "method": "setProperty",
+                  "args": [
+                    null,
+                    null,
+                    null
+                  ],
+                  "view": {
+                    "row": 1,
+                    "col": 2
+                  }
+                },
+                {
+                  "id": 6,
+                  "type": "assign",
+                  "from": {
+                    "location": "method",
+                    "name": 1,
+                    "ptr": "/return"
+                  },
+                  "to": {
+                    "location": "outgoing",
+                    "name": "accumulator",
+                    "ptr": ""
+                  }
+                }
+              ],
+              "view": {
+                "col": 2,
+                "row": 4
+              },
+              "id": "ƒ_reduce_1",
+              "comments": []
+            }
+          ],
+          "name": "fixPackageJSON",
+          "steps": [
+            {
+              "id": 2,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/version"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/version"
+              }
+            },
+            {
+              "id": 3,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/description"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/description"
+              }
+            },
+            {
+              "id": 4,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/scripts"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/scripts"
+              }
+            },
+            {
+              "id": 5,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/keywords"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/keywords"
+              }
+            },
+            {
+              "id": 6,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/contributors"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/contributors"
+              }
+            },
+            {
+              "id": 7,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/author"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/author"
+              }
+            },
+            {
+              "id": 8,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/license"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/license"
+              }
+            },
+            {
+              "id": 9,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/devDependencies"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/devDependencies"
+              }
+            },
+            {
+              "id": 10,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/IAPCategories"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/IAPCategories"
+              }
+            },
+            {
+              "id": 15,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/repository/type"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/repository/type"
+              }
+            },
+            {
+              "id": 18,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/IAPDependencies"
+              },
+              "to": {
+                "location": "method",
+                "name": 17,
+                "ptr": "/args/0/value"
+              }
+            },
+            {
+              "id": 20,
+              "type": "declaration",
+              "library": "Object",
+              "method": "new Object",
+              "args": [
+                "{}"
+              ],
+              "view": {
+                "row": 4,
+                "col": 1
+              }
+            },
+            {
+              "id": 22,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/IAPDependencies"
+              },
+              "to": {
+                "location": "method",
+                "name": 16,
+                "ptr": "/args/3/value"
+              }
+            },
+            {
+              "id": 30,
+              "type": "declaration",
+              "library": "RegExp",
+              "method": "new RegExp",
+              "args": [
+                "\\s",
+                "g"
+              ],
+              "view": {
+                "row": 1,
+                "col": 1
+              }
+            },
+            {
+              "id": 34,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/name"
+              },
+              "to": {
+                "location": "method",
+                "name": 27,
+                "ptr": "/args/0/value"
+              }
+            },
+            {
+              "id": 17,
+              "type": "method",
+              "library": "Object",
+              "method": "keys",
+              "args": [
+                null
+              ],
+              "view": {
+                "row": 3,
+                "col": 1
+              }
+            },
+            {
+              "id": 21,
+              "type": "assign",
+              "from": {
+                "location": "declaration",
+                "name": 20,
+                "ptr": "/return"
+              },
+              "to": {
+                "location": "method",
+                "name": 16,
+                "ptr": "/args/2/value"
+              }
+            },
+            {
+              "id": 31,
+              "type": "assign",
+              "from": {
+                "location": "declaration",
+                "name": 30,
+                "ptr": "/return"
+              },
+              "to": {
+                "location": "method",
+                "name": 27,
+                "ptr": "/args/1/value"
+              }
+            },
+            {
+              "id": 19,
+              "type": "assign",
+              "from": {
+                "location": "method",
+                "name": 17,
+                "ptr": "/return"
+              },
+              "to": {
+                "location": "method",
+                "name": 16,
+                "ptr": "/args/0/value"
+              }
+            },
+            {
+              "id": 27,
+              "type": "method",
+              "library": "String",
+              "method": "replace",
+              "args": [
+                null,
+                null,
+                "-"
+              ],
+              "view": {
+                "row": 1,
+                "col": 2
+              }
+            },
+            {
+              "id": 33,
+              "type": "assign",
+              "from": {
+                "location": "method",
+                "name": 27,
+                "ptr": "/return"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/name"
+              }
+            },
+            {
+              "id": 16,
+              "type": "method",
+              "library": "Array",
+              "method": "reduce",
+              "args": [
+                null,
+                "ƒ_reduce_1",
+                null,
+                null
+              ],
+              "view": {
+                "row": 3,
+                "col": 2
+              }
+            },
+            {
+              "id": 26,
+              "type": "assign",
+              "from": {
+                "location": "method",
+                "name": 16,
+                "ptr": "/return"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/IAPDependencies"
+              }
+            },
+            {
+              "id": 35,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/repository/hostname"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/repository/hostname"
+              }
+            },
+            {
+              "id": 36,
+              "type": "assign",
+              "from": {
+                "location": "incoming",
+                "name": "packageJSON",
+                "ptr": "/repository/path"
+              },
+              "to": {
+                "location": "outgoing",
+                "name": "fixedPackageJSON",
+                "ptr": "/repository/path"
+              }
+            }
+          ],
+          "view": {
+            "col": 2,
+            "row": 5
+          },
+          "id": "userFunc_1",
+          "comments": []
+        }
+      ],
+      "name": "editPackageJSON",
+      "steps": [
+        {
+          "id": 8,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 9,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 6,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 10,
+          "type": "assign",
+          "from": {
+            "location": "incoming",
+            "name": "currentValue",
+            "ptr": ""
+          },
+          "to": {
+            "location": "method",
+            "name": 7,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 19,
+          "type": "declaration",
+          "library": "Number",
+          "method": "new Number",
+          "args": [
+            "2"
+          ],
+          "view": {
+            "row": 3,
+            "col": 3
+          }
+        },
+        {
+          "id": 5,
+          "type": "method",
+          "library": "Object",
+          "method": "getProperty",
+          "args": [
+            null,
+            "name"
+          ],
+          "view": {
+            "row": 1,
+            "col": 1
+          }
+        },
+        {
+          "id": 6,
+          "type": "method",
+          "library": "Object",
+          "method": "getProperty",
+          "args": [
+            null,
+            "type"
+          ],
+          "view": {
+            "row": 2,
+            "col": 1
+          }
+        },
+        {
+          "id": 7,
+          "type": "method",
+          "library": "Object",
+          "method": "getProperty",
+          "args": [
+            null,
+            "content"
+          ],
+          "view": {
+            "row": 3,
+            "col": 1
+          }
+        },
+        {
+          "id": 20,
+          "type": "assign",
+          "from": {
+            "location": "declaration",
+            "name": 19,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 16,
+            "ptr": "/args/2/value"
+          }
+        },
+        {
+          "id": 11,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 7,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 12,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 6,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "newValue",
+            "ptr": "/type"
+          }
+        },
+        {
+          "id": 13,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 5,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "newValue",
+            "ptr": "/name"
+          }
+        },
+        {
+          "id": 1,
+          "type": "method",
+          "library": "JSON",
+          "method": "parse",
+          "args": [
+            null,
+            null
+          ],
+          "view": {
+            "row": 3,
+            "col": 2
+          }
+        },
+        {
+          "id": 15,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 1,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "function",
+            "name": 14,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 14,
+          "type": "function",
+          "function": "userFunc_1",
+          "args": [
+            "",
+            ""
+          ],
+          "view": {
+            "row": 2,
+            "col": 3
+          }
+        },
+        {
+          "id": 17,
+          "type": "assign",
+          "from": {
+            "location": "function",
+            "name": 14,
+            "ptr": "/return/fixedPackageJSON"
+          },
+          "to": {
+            "location": "method",
+            "name": 16,
+            "ptr": "/args/0/value"
+          }
+        },
+        {
+          "id": 16,
+          "type": "method",
+          "library": "JSON",
+          "method": "stringify",
+          "args": [
+            null,
+            null,
+            null
+          ],
+          "view": {
+            "row": 2,
+            "col": 4
+          }
+        },
+        {
+          "id": 18,
+          "type": "assign",
+          "from": {
+            "location": "method",
+            "name": 16,
+            "ptr": "/return"
+          },
+          "to": {
+            "location": "outgoing",
+            "name": "newValue",
+            "ptr": "/content"
+          }
+        }
+      ],
+      "view": {
+        "col": 4,
+        "row": 5
+      },
+      "id": "ƒ_map_1",
+      "comments": []
+    }
+  ],
+  "comments": [],
+  "view": {
+    "col": 3,
+    "row": 5
+  },
+  "created": "2021-12-01T17:55:24.877Z",
+  "createdBy": {
+    "_id": "6180307394366d356e0a4259",
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2022-01-04T16:37:43.866Z",
+  "lastUpdatedBy": {
+    "_id": "6180307394366d356e0a4259",
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn"
+  },
+  "version": "3.17.7-2021.1.7",
+  "tags": []
+}
