@@ -1,0 +1,330 @@
+{
+  "name": "IAP Artifacts AW Create Git Repo",
+  "tasks": {
+    "6244": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Artifact Name",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "name",
+          "obj": "$var.job.export"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": -0.957685664939551,
+      "y": 0.40131578947368424,
+      "scheduled": false
+    },
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "x": -1.0613126079447324,
+      "y": 0.4131578947368421,
+      "summary": "workflow_start",
+      "description": "workflow_start"
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "x": -0.42400690846286704,
+      "y": 0.39210526315789473,
+      "summary": "workflow_end",
+      "description": "workflow_end"
+    },
+    "1e4c": {
+      "name": "query",
+      "summary": "Artifact Description",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "description",
+          "obj": "$var.job.export"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "name",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": -0.853195164075993,
+      "y": 0.4039473684210526,
+      "scheduled": false
+    },
+    "6ae6": {
+      "name": "childJob",
+      "canvasName": "childJob",
+      "summary": "Create on GitLab",
+      "description": "Run a child Job inside a Workflow",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "task": "",
+          "workflow": "IAP Artifacts AW GitLab Create Link",
+          "variables": {
+            "description": {
+              "variable": "",
+              "task": "1e4c",
+              "value": "return_data"
+            },
+            "artifact": {
+              "variable": "",
+              "task": "job",
+              "editable": true,
+              "value": "publishedArtifact"
+            },
+            "repoName": {
+              "variable": "",
+              "task": "6244",
+              "value": "return_data"
+            }
+          },
+          "data_array": "",
+          "transformation": "",
+          "loopType": ""
+        },
+        "outgoing": {
+          "job_details": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>childJob</span>"
+        }
+      ],
+      "groups": [],
+      "actor": "job",
+      "x": -0.7245250431778929,
+      "y": 0.3986842105263158
+    },
+    "42ef": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query Gitlab Link",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "homepage",
+          "obj": "$var.6ae6.job_details"
+        },
+        "outgoing": {
+          "return_data": "$var.job.gitlabLink"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": -0.5302245250431779,
+      "y": 0.3986842105263158,
+      "scheduled": false
+    }
+  },
+  "transitions": {
+    "4778": {},
+    "6244": {
+      "1e4c": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_start": {
+      "6244": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "a671": {},
+    "1e4c": {
+      "6ae6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "f186": {},
+    "4d92": {},
+    "de5e": {},
+    "6cad": {},
+    "b3bd": {},
+    "6ae6": {
+      "42ef": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "fe56": {},
+    "42ef": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    }
+  },
+  "font_size": 12,
+  "created": "2020-05-20T20:47:44.495Z",
+  "created_by": {
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "createdVersion": "5.10.4-2020.1.3.0",
+  "last_updated": "2021-11-09T14:55:00.710Z",
+  "last_updated_by": {
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "lastUpdatedVersion": "5.40.5-2021.1.59.0",
+  "type": "automation",
+  "description": null,
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "export": {
+        "type": "object",
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      },
+      "publishedArtifact": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      }
+    },
+    "required": [
+      "export",
+      "publishedArtifact"
+    ]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "export": {
+        "type": "object",
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      },
+      "publishedArtifact": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      },
+      "gitlabLink": {
+        "type": [
+          "string",
+          "number",
+          "object",
+          "integer",
+          "array",
+          "boolean",
+          "null"
+        ],
+        "examples": [
+          "value"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "groups": []
+}
