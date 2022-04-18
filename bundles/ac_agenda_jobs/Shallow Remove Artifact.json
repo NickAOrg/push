@@ -1,0 +1,24 @@
+{
+  "_id": "618a8bc5c03d3333d02c60fd",
+  "name": "Shallow Remove Artifact",
+  "data": {
+    "description": "",
+    "workflowId": "Shallow Remove Artifact",
+    "formId": "Shallow Remove Artifact",
+    "formData": {},
+    "gbac": {
+      "write": [],
+      "read": []
+    },
+    "lastUpdated": "2020-10-06T17:44:48.759Z",
+    "modifiedById": "6180307394366d356e0a4259",
+    "modifiedByUsername": "admin@pronghorn"
+  },
+  "lastModifiedBy": "Nicks-MacBook-Pro.local:21278",
+  "lastRunAt": null,
+  "nextRunAt": null,
+  "priority": 0,
+  "repeatInterval": null,
+  "repeatTimezone": null,
+  "type": "normal"
+}
