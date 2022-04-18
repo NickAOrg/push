@@ -1,0 +1,2251 @@
+{
+  "name": "IAP Artifacts AW Discover Components",
+  "tasks": {
+    "834": {
+      "name": "componentDiscovery",
+      "canvasName": "componentDiscovery",
+      "summary": "Performs discovery on Automation Catalogs or Workflows",
+      "description": "Discovers any referenced components within automation catalogs",
+      "location": "Application",
+      "locationType": null,
+      "app": "AppArtifacts",
+      "displayName": "AppArtifacts",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "entryPoint": "$var.5e6b.merged_object"
+        },
+        "outgoing": {
+          "discovery": "$var.job.discovery"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "component<span class='highlight-string'>Disc</span>overy"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Performs <span class='highlight-string'>disc</span>overy on Automation Catalogs or Workflows"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Disc</span>overs any referenced components within automation catalogs"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.601899827288428,
+      "y": 0.486607142857143,
+      "scheduled": false
+    },
+    "2749": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query forms from form",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "forms",
+          "obj": "$var.6f9c.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 1.5552677029361,
+      "y": 0.619047619047619,
+      "scheduled": false
+    },
+    "5875": {
+      "name": "modify",
+      "canvasName": "modify",
+      "summary": "Modify automations",
+      "description": "Modify data",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "object_to_update": "$var.job.components",
+          "query": "automations",
+          "new_value": "$var.624e.return_data"
+        },
+        "outgoing": {
+          "updated_object": "$var.job.components"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>modify</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Modify</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Modify</span> data"
+        }
+      ],
+      "groups": [],
+      "x": 0.914507772020725,
+      "y": 0.5625,
+      "scheduled": false
+    },
+    "7144": {
+      "name": "merge",
+      "canvasName": "merge",
+      "summary": "Merge Discovery Data",
+      "description": "Merge data into a single object",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "data_to_merge": [
+            {
+              "key": "components",
+              "value": {
+                "task": "job",
+                "variable": "components"
+              }
+            }
+          ]
+        },
+        "outgoing": {
+          "merged_object": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>merge</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Merge</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Merge</span> data into a single object"
+        }
+      ],
+      "groups": [],
+      "x": 1.0138169257340242,
+      "y": 2.0907894736842105
+    },
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "x": -0.17012089810017272,
+      "y": 0.4842105263157895
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "x": 2.03022452504318,
+      "y": 0.84375
+    },
+    "2d7f": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Get Array Automation Catalogs",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "automationCatalogs.name",
+          "obj": "$var.job.artifact"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.0941278065630397,
+      "y": 0.395833333333333,
+      "scheduled": false
+    },
+    "51d6": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Get Array Automation Workflows.",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "automationWorkflows.name",
+          "obj": "$var.job.artifact"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.0975820379965458,
+      "y": 0.59077380952381,
+      "scheduled": false
+    },
+    "5dc2": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query Component Map",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "componentMap",
+          "obj": "$var.job.discovery"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.738341968911917,
+      "y": 0.483630952380952,
+      "scheduled": false
+    },
+    "66d8": {
+      "name": "ShowJsonForm",
+      "canvasName": "ShowJsonForm",
+      "summary": "Show Json Form",
+      "description": "Show Json Form",
+      "location": "Application",
+      "app": "JsonForms",
+      "displayName": "JsonForms",
+      "type": "manual",
+      "variables": {
+        "incoming": {
+          "form_id": "Artifact Components",
+          "instance_data": "$var.7144.merged_object"
+        },
+        "outgoing": {
+          "export": "$var.job.mergedComponents"
+        },
+        "error": ""
+      },
+      "view": "/json-forms/task/ShowJsonForm",
+      "deprecated": false,
+      "matched": [],
+      "groups": [],
+      "x": 1.12435233160622,
+      "y": 0.483630952380952,
+      "scheduled": false
+    },
+    "aa5f": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query workflow",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "workflow",
+          "obj": "$var.5dc2.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.816062176165803,
+      "y": 0.380952380952381,
+      "scheduled": false
+    },
+    "624e": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query ac-agenda-job",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "ac-agenda-job",
+          "obj": "$var.5dc2.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.820379965457686,
+      "y": 0.543154761904762,
+      "scheduled": false
+    },
+    "2f07": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query forms",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "forms",
+          "obj": "$var.5dc2.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.822107081174439,
+      "y": 0.717261904761905,
+      "scheduled": false
+    },
+    "a796": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query template",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "template",
+          "obj": "$var.5dc2.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.822970639032815,
+      "y": 0.898809523809524,
+      "scheduled": false
+    },
+    "5fa9": {
+      "name": "newVariable",
+      "canvasName": "newVariable",
+      "summary": "Create a Job Variable",
+      "description": "Create a new Job variable by Job ID and assign it a value.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "name": "components",
+          "value": {
+            "workflows": [],
+            "automations": [],
+            "jsonForms": [],
+            "templates": [],
+            "forms": [],
+            "commandTemplates": [],
+            "analyticTemplates": [],
+            "goldenConfigTrees": [],
+            "transformations": []
+          }
+        },
+        "outgoing": {
+          "value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "summary",
+          "highlightString": "Create a <span class='highlight-string'>Job</span> Variable"
+        },
+        {
+          "key": "description",
+          "highlightString": "Create a new <span class='highlight-string'>Job</span> variable by Job ID and assign it a value."
+        }
+      ],
+      "groups": [],
+      "x": 0.673575129533679,
+      "y": 0.709821428571429
+    },
+    "b24c": {
+      "name": "modify",
+      "canvasName": "modify",
+      "summary": "Modify workflows",
+      "description": "Modify data",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "object_to_update": "$var.job.components",
+          "query": "workflows",
+          "new_value": "$var.aa5f.return_data"
+        },
+        "outgoing": {
+          "updated_object": "$var.job.components"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>modify</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Modify</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Modify</span> data"
+        }
+      ],
+      "groups": [],
+      "x": 0.914507772020725,
+      "y": 0.389880952380952,
+      "scheduled": false
+    },
+    "f0f": {
+      "name": "modify",
+      "canvasName": "modify",
+      "summary": "Modify forms",
+      "description": "Modify data",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "object_to_update": "$var.job.components",
+          "query": "forms",
+          "new_value": "$var.2f07.return_data"
+        },
+        "outgoing": {
+          "updated_object": "$var.job.components"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>modify</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Modify</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Modify</span> data"
+        }
+      ],
+      "groups": [],
+      "x": 0.913644214162349,
+      "y": 0.733630952380952,
+      "scheduled": false
+    },
+    "6b26": {
+      "name": "modify",
+      "canvasName": "modify",
+      "summary": "Modify templates",
+      "description": "Modify data",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "object_to_update": "$var.job.components",
+          "query": "templates",
+          "new_value": "$var.a796.return_data"
+        },
+        "outgoing": {
+          "updated_object": "$var.job.components"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>modify</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Modify</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Modify</span> data"
+        }
+      ],
+      "groups": [],
+      "x": 0.913644214162349,
+      "y": 0.901785714285714,
+      "scheduled": false
+    },
+    "5e51": {
+      "name": "modify",
+      "canvasName": "modify",
+      "summary": "Modify jsonForms",
+      "description": "Modify data",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "object_to_update": "$var.job.components",
+          "query": "jsonForms",
+          "new_value": "$var.dfce.return_data"
+        },
+        "outgoing": {
+          "updated_object": "$var.job.components"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>modify</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Modify</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Modify</span> data"
+        }
+      ],
+      "groups": [],
+      "x": 0.914507772020725,
+      "y": 1.07440476190476,
+      "scheduled": false
+    },
+    "dfce": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query json-forms",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "json-forms",
+          "obj": "$var.5dc2.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.824697754749568,
+      "y": 1.06845238095238,
+      "scheduled": false
+    },
+    "dab7": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query mop-template",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "mop-template",
+          "obj": "$var.5dc2.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.827288428324698,
+      "y": 1.26339285714286,
+      "scheduled": false
+    },
+    "e00a": {
+      "name": "modify",
+      "canvasName": "modify",
+      "summary": "Modify commandTemplates",
+      "description": "Modify data",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "object_to_update": "$var.job.components",
+          "query": "commandTemplates",
+          "new_value": "$var.dab7.return_data"
+        },
+        "outgoing": {
+          "updated_object": "$var.job.components"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>modify</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Modify</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Modify</span> data"
+        }
+      ],
+      "groups": [],
+      "x": 0.933506044905009,
+      "y": 1.25446428571429,
+      "scheduled": false
+    },
+    "e600": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query mop-analytic-template",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "mop-analytic-template",
+          "obj": "$var.5dc2.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.828151986183074,
+      "y": 1.45089285714286,
+      "scheduled": false
+    },
+    "a3da": {
+      "name": "modify",
+      "canvasName": "modify",
+      "summary": "Modify analyticTemplates",
+      "description": "Modify data",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "object_to_update": "$var.job.components",
+          "query": "analyticTemplates",
+          "new_value": "$var.e600.return_data"
+        },
+        "outgoing": {
+          "updated_object": "$var.job.components"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>modify</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Modify</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Modify</span> data"
+        }
+      ],
+      "groups": [],
+      "x": 0.931778929188256,
+      "y": 1.45089285714286,
+      "scheduled": false
+    },
+    "a5ab": {
+      "name": "modify",
+      "canvasName": "modify",
+      "summary": "Modify goldenConfigTrees",
+      "description": "Modify data",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "object_to_update": "$var.job.components",
+          "query": "goldenConfigTrees",
+          "new_value": "$var.f35a.return_data"
+        },
+        "outgoing": {
+          "updated_object": "$var.job.components"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>modify</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Modify</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Modify</span> data"
+        }
+      ],
+      "groups": [],
+      "x": 0.939550949913644,
+      "y": 1.64136904761905,
+      "scheduled": false
+    },
+    "f35a": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query golden-config",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "golden-config",
+          "obj": "$var.5dc2.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.829879101899827,
+      "y": 1.63541666666667,
+      "scheduled": false
+    },
+    "6f9c": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query components from form",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "components",
+          "obj": "$var.job.mergedComponents"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 1.37305699481865,
+      "y": 0.474702380952381,
+      "scheduled": false
+    },
+    "ca33": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query automations from form",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "automations",
+          "obj": "$var.6f9c.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 1.35405872193437,
+      "y": 0.666666666666667,
+      "scheduled": false
+    },
+    "f4fa": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query workflows from form",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "workflows",
+          "obj": "$var.6f9c.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 1.41882556131261,
+      "y": 0.660714285714286,
+      "scheduled": false
+    },
+    "a9df": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query jsonForms from form",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "jsonForms",
+          "obj": "$var.6f9c.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 1.48618307426598,
+      "y": 0.645833333333333,
+      "scheduled": false
+    },
+    "e6f7": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query analyticTemplates from form",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "analyticTemplates",
+          "obj": "$var.6f9c.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 1.75043177892919,
+      "y": 0.486607142857143,
+      "scheduled": false
+    },
+    "7ca3": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query templates from form",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "templates",
+          "obj": "$var.6f9c.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 1.62348877374784,
+      "y": 0.578869047619048,
+      "scheduled": false
+    },
+    "7fb0": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query commandTemplates from form",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "commandTemplates",
+          "obj": "$var.6f9c.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 1.6839378238342,
+      "y": 0.53125,
+      "scheduled": false
+    },
+    "e651": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query goldenConfigTrees from form",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "goldenConfigTrees",
+          "obj": "$var.6f9c.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 1.80656303972366,
+      "y": 0.427083333333333,
+      "scheduled": false
+    },
+    "47d6": {
+      "name": "merge",
+      "canvasName": "merge",
+      "summary": "Merge Component Data to original form",
+      "description": "Merge data into a single object",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "data_to_merge": [
+            {
+              "key": "ac-agenda-job",
+              "value": {
+                "task": "ca33",
+                "variable": "return_data"
+              }
+            },
+            {
+              "key": "workflow",
+              "value": {
+                "task": "f4fa",
+                "variable": "return_data"
+              }
+            },
+            {
+              "key": "json-forms",
+              "value": {
+                "task": "a9df",
+                "variable": "return_data"
+              }
+            },
+            {
+              "key": "forms",
+              "value": {
+                "task": "2749",
+                "variable": "return_data"
+              }
+            },
+            {
+              "key": "template",
+              "value": {
+                "task": "7ca3",
+                "variable": "return_data"
+              }
+            },
+            {
+              "key": "mop-template",
+              "value": {
+                "task": "7fb0",
+                "variable": "return_data"
+              }
+            },
+            {
+              "key": "mop-analytic-template",
+              "value": {
+                "task": "e6f7",
+                "variable": "return_data"
+              }
+            },
+            {
+              "key": "golden-config",
+              "value": {
+                "task": "e651",
+                "variable": "return_data"
+              }
+            },
+            {
+              "key": "transformation",
+              "value": {
+                "task": "1ee5",
+                "variable": "return_data"
+              }
+            }
+          ]
+        },
+        "outgoing": {
+          "merged_object": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>merge</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Merge</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Merge</span> data into a single object"
+        }
+      ],
+      "groups": [],
+      "x": 1.60189982728843,
+      "y": 0.854166666666667
+    },
+    "3dc1": {
+      "name": "setObjectKey",
+      "canvasName": "setObjectKey",
+      "summary": "Set componentMap Key",
+      "description": "Set an object key",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "Object",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "obj": "$var.job.discovery",
+          "path": [
+            "componentMap"
+          ],
+          "value": "$var.47d6.merged_object"
+        },
+        "outgoing": {
+          "object": "$var.job.discovery"
+        },
+        "error": ""
+      },
+      "deprecated": true,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>setObj</span>ectKey"
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.9006908462867,
+      "y": 0.852678571428571,
+      "scheduled": false
+    },
+    "c9b2": {
+      "name": "prepareExports",
+      "canvasName": "prepareExports",
+      "summary": "Export components",
+      "description": "Prepare list of selected individual components for export. Takes in the component map, filters components selected for export, and outputs an array of component maps and dependencies for each item.",
+      "location": "Application",
+      "locationType": null,
+      "app": "AppArtifacts",
+      "displayName": "AppArtifacts",
+      "type": "automatic",
+      "variables": {
+        "incoming": {
+          "componentMap": "$var.47d6.merged_object"
+        },
+        "outgoing": {
+          "List": "$var.job.exports"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>prepare</span>Exports"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Prepare</span> list of selected individual components for export. Takes in the component map, filters components selected for export, and outputs an array of component maps and dependencies for each item."
+        }
+      ],
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 1.73316062176166,
+      "y": 0.852678571428571,
+      "scheduled": false
+    },
+    "5e6b": {
+      "name": "merge",
+      "canvasName": "merge",
+      "summary": "Merge Data",
+      "description": "Merge data into a single object",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "data_to_merge": [
+            {
+              "key": "automation",
+              "value": {
+                "task": "2d7f",
+                "variable": "return_data"
+              }
+            },
+            {
+              "key": "workflow",
+              "value": {
+                "task": "51d6",
+                "variable": "return_data"
+              }
+            },
+            {
+              "key": "transformation",
+              "value": {
+                "task": "93bc",
+                "variable": "return_data"
+              }
+            }
+          ]
+        },
+        "outgoing": {
+          "merged_object": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>merge</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Merge</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Merge</span> data into a single object"
+        }
+      ],
+      "groups": [],
+      "x": 0.33906633906633904,
+      "y": 0.48027057497181513
+    },
+    "d162": {
+      "name": "evaluation",
+      "canvasName": "evaluation",
+      "summary": "Run Evaluation Task",
+      "description": "Run an evaluation",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "all_true_flag": false,
+          "evaluation_groups": [
+            {
+              "all_true_flag": false,
+              "evaluations": [
+                {
+                  "query": "zeroTouch",
+                  "operand_1": {
+                    "variable": "artifact",
+                    "task": "job"
+                  },
+                  "operator": "==",
+                  "operand_2": {
+                    "variable": false,
+                    "task": "static"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "outgoing": {
+          "return_value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>eval</span>uation"
+        },
+        {
+          "key": "summary",
+          "highlightString": "Run <span class='highlight-string'>Eval</span>uation Task"
+        },
+        {
+          "key": "description",
+          "highlightString": "Run an <span class='highlight-string'>eval</span>uation"
+        }
+      ],
+      "groups": [],
+      "x": 1.151986183074266,
+      "y": 0.9023485784919654
+    },
+    "f2e9": {
+      "name": "newVariable",
+      "canvasName": "newVariable",
+      "summary": "Create a Job Variable",
+      "description": "Create a new Job variable by Job ID and assign it a value.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "name": "mergedComponents",
+          "value": "$var.7144.merged_object"
+        },
+        "outgoing": {
+          "value": null
+        }
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "summary",
+          "highlightString": "Create a <span class='highlight-string'>Job</span> Variable"
+        },
+        {
+          "key": "description",
+          "highlightString": "Create a new <span class='highlight-string'>Job</span> variable by Job ID and assign it a value."
+        }
+      ],
+      "groups": [],
+      "x": 1.13568281938326,
+      "y": 1.2886435331230284
+    },
+    "4c38": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query transformation",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "transformation",
+          "obj": "$var.5dc2.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 0.8298791018998273,
+      "y": 1.8723684210526317,
+      "scheduled": false
+    },
+    "9e15": {
+      "name": "modify",
+      "canvasName": "modify",
+      "summary": "Modify transformations",
+      "description": "Modify data",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "object_to_update": "$var.job.components",
+          "query": "transformations",
+          "new_value": "$var.4c38.return_data"
+        },
+        "outgoing": {
+          "updated_object": "$var.job.components"
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>modify</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Modify</span> Data"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Modify</span> data"
+        }
+      ],
+      "groups": [],
+      "x": 0.9455958549222798,
+      "y": 1.8710526315789473,
+      "scheduled": false
+    },
+    "1ee5": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query transformations from form",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "displayName": "WorkFlowEngine",
+      "type": "operation",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "transformations",
+          "obj": "$var.6f9c.return_data"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": 1.8592400690846287,
+      "y": 0.3618421052631579,
+      "scheduled": false
+    },
+    "93bc": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query JST",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "jst",
+          "obj": "$var.job.artifact"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": ""
+      },
+      "deprecated": false,
+      "matched": [
+        {
+          "key": "canvasName",
+          "highlightString": "<span class='highlight-string'>query</span>"
+        },
+        {
+          "key": "summary",
+          "highlightString": "<span class='highlight-string'>Query</span> Data Using 'json-query' Format"
+        },
+        {
+          "key": "description",
+          "highlightString": "<span class='highlight-string'>Query</span> data using a dot/bracket notation string and a matching key/value pair."
+        }
+      ],
+      "groups": [],
+      "x": -0.024179620034542316,
+      "y": 0.4855263157894737,
+      "scheduled": false
+    }
+  },
+  "transitions": {
+    "834": {
+      "5fa9": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "2749": {
+      "47d6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "5875": {
+      "2f07": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "7144": {
+      "f2e9": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_start": {
+      "93bc": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "2d7f": {
+      "5e6b": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "51d6": {
+      "5e6b": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "5dc2": {
+      "aa5f": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "66d8": {
+      "6f9c": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "aa5f": {
+      "b24c": {
+        "type": "standard",
+        "state": "success"
+      },
+      "624e": {
+        "type": "standard",
+        "state": "failure"
+      }
+    },
+    "624e": {
+      "5875": {
+        "type": "standard",
+        "state": "success"
+      },
+      "2f07": {
+        "type": "standard",
+        "state": "failure"
+      }
+    },
+    "c8f0": {},
+    "2f07": {
+      "f0f": {
+        "type": "standard",
+        "state": "success"
+      },
+      "a796": {
+        "type": "standard",
+        "state": "failure"
+      }
+    },
+    "a796": {
+      "6b26": {
+        "type": "standard",
+        "state": "success"
+      },
+      "dfce": {
+        "type": "standard",
+        "state": "failure"
+      }
+    },
+    "5fa9": {
+      "5dc2": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "b24c": {
+      "624e": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "f0f": {
+      "a796": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "6b26": {
+      "dfce": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "5e51": {
+      "dab7": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "dfce": {
+      "5e51": {
+        "type": "standard",
+        "state": "success"
+      },
+      "dab7": {
+        "type": "standard",
+        "state": "failure"
+      }
+    },
+    "dab7": {
+      "e00a": {
+        "type": "standard",
+        "state": "success"
+      },
+      "e600": {
+        "type": "standard",
+        "state": "failure"
+      }
+    },
+    "e00a": {
+      "e600": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "e600": {
+      "a3da": {
+        "type": "standard",
+        "state": "success"
+      },
+      "f35a": {
+        "type": "standard",
+        "state": "failure"
+      }
+    },
+    "a3da": {
+      "f35a": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "a5ab": {
+      "4c38": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "f35a": {
+      "a5ab": {
+        "type": "standard",
+        "state": "success"
+      },
+      "4c38": {
+        "type": "standard",
+        "state": "failure"
+      }
+    },
+    "6f9c": {
+      "2749": {
+        "type": "standard",
+        "state": "success"
+      },
+      "ca33": {
+        "type": "standard",
+        "state": "success"
+      },
+      "f4fa": {
+        "type": "standard",
+        "state": "success"
+      },
+      "a9df": {
+        "type": "standard",
+        "state": "success"
+      },
+      "7ca3": {
+        "type": "standard",
+        "state": "success"
+      },
+      "7fb0": {
+        "type": "standard",
+        "state": "success"
+      },
+      "e6f7": {
+        "type": "standard",
+        "state": "success"
+      },
+      "e651": {
+        "type": "standard",
+        "state": "success"
+      },
+      "1ee5": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "ca33": {
+      "47d6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "f4fa": {
+      "47d6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "a9df": {
+      "47d6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "e6f7": {
+      "47d6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "7ca3": {
+      "47d6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "7fb0": {
+      "47d6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "e651": {
+      "47d6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "47d6": {
+      "c9b2": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "3dc1": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "fd8d": {},
+    "b8e8": {},
+    "2a8b": {},
+    "c9b2": {
+      "3dc1": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "5e6b": {
+      "834": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "d162": {
+      "6f9c": {
+        "type": "standard",
+        "state": "failure"
+      },
+      "66d8": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "f2e9": {
+      "d162": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "4c38": {
+      "7144": {
+        "type": "standard",
+        "state": "failure"
+      },
+      "9e15": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "9e15": {
+      "7144": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "1ee5": {
+      "47d6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "93bc": {
+      "2d7f": {
+        "type": "standard",
+        "state": "failure"
+      },
+      "51d6": {
+        "type": "standard",
+        "state": "failure"
+      },
+      "5e6b": {
+        "type": "standard",
+        "state": "success"
+      }
+    }
+  },
+  "font_size": 12,
+  "created": "2020-03-27T16:46:32.533Z",
+  "created_by": {
+    "provenance": "Local AAA",
+    "username": "Itential Artifacts",
+    "firstname": "admin",
+    "inactive": true,
+    "email": ""
+  },
+  "createdVersion": "5.5.9-2019.3.0.0",
+  "last_updated": "2021-11-09T14:55:00.674Z",
+  "last_updated_by": {
+    "provenance": "Local AAA",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false,
+    "email": ""
+  },
+  "lastUpdatedVersion": "5.40.5-2021.1.59.0",
+  "type": "automation",
+  "description": null,
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "artifact": {
+        "type": "object",
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      }
+    },
+    "required": [
+      "artifact"
+    ]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "artifact": {
+        "type": "object",
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      },
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      },
+      "discovery": {
+        "title": "object",
+        "type": "object",
+        "properties": {},
+        "examples": [
+          {
+            "first": {
+              "second": {
+                "third": "last"
+              }
+            }
+          }
+        ]
+      },
+      "components": {
+        "type": [
+          "array",
+          "string",
+          "boolean",
+          "integer",
+          "number",
+          "object"
+        ],
+        "examples": [
+          "updated item"
+        ]
+      },
+      "mergedComponents": {
+        "type": [
+          "array",
+          "boolean",
+          "null",
+          "number",
+          "object",
+          "string"
+        ]
+      },
+      "exports": {
+        "type": "array"
+      }
+    }
+  },
+  "tags": [],
+  "groups": []
+}
